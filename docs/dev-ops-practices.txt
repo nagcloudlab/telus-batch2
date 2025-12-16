@@ -1,0 +1,18 @@
+
+
+
+dev-ops practices
+=================
+
+-> build-automation
+-> continuous-integration
+-> continuous-delivery/deployment
+-> infrastructure-as-code
+-> monitoring-and-logging
+-> communication-and-collaboration
+
+with shift-left testing approaches
+
+on cloud environments ( aws / azure / gcp )
+
+-> containerization ( docker / kubernetes ) ( optional )
