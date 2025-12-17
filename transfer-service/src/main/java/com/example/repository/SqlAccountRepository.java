@@ -7,7 +7,7 @@ import com.example.model.Account;
  * author: Dev-1 | Team-1
  */
 
-public class SqlAccountRepository {
+public class SqlAccountRepository implements AccountRepository {
 
     public SqlAccountRepository() {
         System.out.println("SqlAccountRepository initialized.");
