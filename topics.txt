@@ -4,3 +4,35 @@
 -> how to automate build
 -> how to automated tests
 -> how to continuous integration
+
+
+-------------------------------------------
+Test Pyramid
+-------------------------------------------
+
+-> unit tests ( 70% )
+    -> fast
+    -> isolated
+    -> reliable
+    -> low cost
+    -> high coverage ( 80-90% )
+
+    who should write unit tests?
+    -> developers 
+    when to write unit tests?
+    -> TDD ( test driven development )
+    -> BDD ( behavior driven development )
+
+-> testing f.w -> junit
+
+---------------------------------
+
+-> unit tests
+-> api-tests
+-> contract tests
+-> performance tests
+    -> stress tests
+    -> load tests
+    -> soak tests
+
+--------------------------    

@@ -4,15 +4,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example</groupId>
-    <artifactId>service-2</artifactId>
+    <groupId>com.telus</groupId>
+    <artifactId>service-1</artifactId>
     <version>1.0-SNAPSHOT</version>
-
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <parent>
         <groupId>com.telus</groupId>
@@ -21,12 +15,13 @@
         <relativePath>../pom.xml</relativePath>
     </parent>
 
-    <dependencies>
-        <dependency>
-            <groupId>com.telus</groupId>
-            <artifactId>service-1</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
+    <packaging>jar</packaging>
+
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
 
 </project>
