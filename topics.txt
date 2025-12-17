@@ -1,2 +1,6 @@
 
 -> modern s/w enginneering & architectures
+-> how to write tesatble code
+-> how to automate build
+-> how to automated tests
+-> how to continuous integration
