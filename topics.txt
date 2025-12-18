@@ -28,10 +28,7 @@ Test Pyramid
 
 -> unit tests
 -> api-tests
--> contract tests
 -> performance tests
-    -> stress tests
-    -> load tests
-    -> soak tests
+-> ui tests   
 
 --------------------------    

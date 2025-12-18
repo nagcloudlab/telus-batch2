@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transfer Service</title>
+</head>
+<body>
+<h1>Transfer Service</h1>
+
+<p>Status: <span id="status">UP</span></p>
+
+<button onclick="doTransfer()">Transfer ₹100</button>
+
+<pre id="result"></pre>
+
+<script>
+    function doTransfer() {
+      fetch('/api/v1/transfer', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fromAccount: 'ACC1001',
+          toAccount: 'ACC2001',
+          amount: 100
+        })
+      })
+      .then(r => r.json())
+      .then(d => document.getElementById('result').innerText =
+        JSON.stringify(d, null, 2));
+    }
+</script>
+</body>
+</html>
