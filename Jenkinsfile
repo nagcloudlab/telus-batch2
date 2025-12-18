@@ -15,7 +15,6 @@ pipeline {
         PROTOCOL = "http"
         HOST = "localhost"
         PORT = "8080"
-        PROJECT_DIR = "."
     }
 
     stages {
@@ -25,7 +24,6 @@ pipeline {
                 echo '=================================================='
                 echo '🔨 Building Application'
                 echo '=================================================='
-                dir("${PROJECT_DIR}") {
                     sh '''
                         # Use local Java and Maven
                         java -version
@@ -43,7 +41,6 @@ pipeline {
                             exit 1
                         fi
                     '''
-                }
             }
         }
         stage('Start Transfer Service') {
@@ -51,7 +48,6 @@ pipeline {
                 echo '=================================================='
                 echo '🚀 Starting Transfer Service'
                 echo '=================================================='
-                dir("${PROJECT_DIR}") {
                     sh '''
                         set -e
 
@@ -87,7 +83,6 @@ pipeline {
                     '''
                 }
             }
-        }
 
         stage('Run All Tests') {
 
@@ -98,12 +93,10 @@ pipeline {
                         echo '=================================================='
                         echo '🧪 Running API Tests (REST Assured)'
                         echo '=================================================='
-                        dir("${PROJECT_DIR}/api-tests") {
                             sh """
                                 mvn -B -ntp test -DbaseUrl=${BASE_URL}
                             """
                         }
-                    }
                     post {
                         always {
                             echo '📊 Publishing API Test Results'
@@ -118,12 +111,10 @@ pipeline {
                         echo '=================================================='
                         echo '🎭 Running UI Tests (Playwright)'
                         echo '=================================================='
-                        dir("${PROJECT_DIR}/ui-tests") {
                             sh """
                                 mvn -B -ntp test -DbaseUrl=${BASE_URL}
                             """
                         }
-                    }
                     post {
                         always {
                             echo '📊 Publishing UI Test Results'
@@ -153,7 +144,6 @@ pipeline {
                         echo '=================================================='
                         echo '⚡ Running Performance Tests (JMeter)'
                         echo '=================================================='
-                        dir("${PROJECT_DIR}/perf-tests") {
                             sh """
                                 mvn -B -ntp clean verify \
                                     -Dprotocol=${PROTOCOL} \
@@ -161,7 +151,6 @@ pipeline {
                                     -Dport=${PORT}
                             """
                         }
-                    }
                     post {
                         always {
                             echo '📊 Publishing Performance Test Results'
