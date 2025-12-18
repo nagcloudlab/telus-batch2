@@ -15,7 +15,7 @@ pipeline {
         PROTOCOL = "http"
         HOST = "localhost"
         PORT = "8080"
-        PROJECT_DIR = "telus-batch2"
+        PROJECT_DIR = "."
     }
 
     stages {
