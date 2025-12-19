@@ -1,0 +1,82 @@
+version: '3.8'
+
+services:
+  # Prism Mock Server - Returns dynamic responses from OpenAPI spec
+  prism:
+    image: stoplight/prism:latest
+    container_name: transfer-service-mock
+    ports:
+      - "4010:4010"
+    volumes:
+      - ./transfer-service-api.yaml:/api/transfer-service-api.yaml:ro
+    command: mock -h 0.0.0.0 -p 4010 --dynamic /api/transfer-service-api.yaml
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:4010"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - transfer-network
+
+  # Swagger UI - Interactive API documentation
+  swagger-ui:
+    image: swaggerapi/swagger-ui:latest
+    container_name: transfer-service-docs
+    ports:
+      - "8081:8080"
+    volumes:
+      - ./transfer-service-api.yaml:/api/transfer-service-api.yaml:ro
+    environment:
+      SWAGGER_JSON: /api/transfer-service-api.yaml
+      BASE_URL: /api-docs
+      DISPLAY_REQUEST_DURATION: "true"
+      DISPLAY_OPERATION_ID: "true"
+    networks:
+      - transfer-network
+
+  # WireMock - Alternative mock server with more control
+  wiremock:
+    image: wiremock/wiremock:latest
+    container_name: transfer-service-wiremock
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./wiremock/mappings:/home/wiremock/mappings:ro
+      - ./wiremock/__files:/home/wiremock/__files:ro
+    command:
+      - "--global-response-templating"
+      - "--verbose"
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:8080/__admin/"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+    networks:
+      - transfer-network
+
+networks:
+  transfer-network:
+    driver: bridge
+
+# Usage:
+# -------
+# Start all services:
+#   docker-compose up -d
+#
+# View logs:
+#   docker-compose logs -f
+#
+# Stop all services:
+#   docker-compose down
+#
+# Access URLs:
+#   - Mock API (Prism):    http://localhost:4010/v1
+#   - API Docs (Swagger):  http://localhost:8081
+#   - WireMock:            http://localhost:8080
+#
+# Test Mock API:
+#   curl http://localhost:4010/v1/health
+#   curl -X POST http://localhost:4010/v1/transfers \
+#     -H "Content-Type: application/json" \
+#     -H "Authorization: Bearer test-token" \
+#     -d '{"sourceUPI":"alice@okaxis","destinationUPI":"bob@paytm","amount":500.00}'
