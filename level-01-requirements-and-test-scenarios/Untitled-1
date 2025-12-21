@@ -1,0 +1,60 @@
+
+
+
+ - b2b based
+
+build the bot(s),
+
+----------------------------------------------------
+Engine-1 : Context Generation Engine
+----------------------------------------------------
+ -> input  : Req ( Text / video / audio /etc )    
+ -> output : best-outline
+if bot can't make, with SME support , finalize outline
+----------------------------------------------------
+Engine-2 : Content & Simulation Engine 
+----------------------------------------------------
+ -> input
+    - toc
+    - emp-batch-profile
+ -> output:
+    - with sme & bot   
+    - content gen ( Pre-Req, PPT + Exercise + case-study + Assesments)
+    - sme -> validate & approve  
+---------------------------------------------------- 
+Engine-3 : Execution
+---------------------------------------------------- 
+-> run, pre-test
+-> adapt  content based based on pre-test-result
+-> run session by bot
+-> track learning speed ( difficulties & behavior )
+-> if participant not able to progress, alert SME
+---------------------------------------------------- 
+Engine-4 : Proctoring 
+---------------------------------------------------
+--
+--
+--
+check : non-it skill check
+---------------------------------------------------- 
+Engine-5 : Broadcasting 
+---------------------------------------------------
+input : from Engine-2 output
+-  for btc | b2b | btg
+- broadcast  ( digital marketing )
+Aim : Awareness & Business Promotion
+----------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+

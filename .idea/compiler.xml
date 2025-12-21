@@ -2,25 +2,32 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
       <profile name="Maven default annotation processors profile" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="api-tests" />
-        <module name="perf-tests" />
-        <module name="ui-tests" />
-        <module name="transfer-service" />
+        <module name="transfer-service-refactored" />
+        <module name="transfer-service-tested" />
+        <module name="transfer-service-tested-with-sonarqube" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="api-tests" target="17" />
+      <module name="perf-tests" target="17" />
+      <module name="transfer-service" target="17" />
       <module name="transfer-service (1)" target="17" />
       <module name="transfer-service (1) (com.demo)" target="17" />
+      <module name="ui-tests" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="transfer-service" options="-parameters" />
       <module name="transfer-service (1) (com.demo)" options="-parameters" />
+      <module name="transfer-service-refactored" options="-parameters" />
+      <module name="transfer-service-tested" options="-parameters" />
+      <module name="transfer-service-tested-with-sonarqube" options="-parameters" />
     </option>
   </component>
 </project>

@@ -209,7 +209,7 @@
                         </goals>
                         <configuration>
                             <dataFile>${project.build.directory}/coverage-reports/jacoco-ut.exec</dataFile>
-                            <outputDirectory>${project.reporting.outputDirectory}/jacoco-ut</outputDirectory>
+                            <outputDirectory>${project.build.directory}/site/jacoco</outputDirectory>
                         </configuration>
                     </execution>
                     
