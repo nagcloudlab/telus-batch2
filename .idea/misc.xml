@@ -8,9 +8,8 @@
         <option value="$PROJECT_DIR$/api-tests/pom.xml" />
         <option value="$PROJECT_DIR$/perf-tests/pom.xml" />
         <option value="$PROJECT_DIR$/transfer-service/pom.xml" />
-        <option value="$PROJECT_DIR$/level-06-refactoring-solid/pom.xml" />
-        <option value="$PROJECT_DIR$/level-07-comprehensive-unit-testing/pom.xml" />
-        <option value="$PROJECT_DIR$/level-08-sonarqube-quality-gate/pom.xml" />
+        <option value="$PROJECT_DIR$/level-09-security-sast/pom.xml" />
+        <option value="$PROJECT_DIR$/level-09/pom.xml" />
       </list>
     </option>
   </component>

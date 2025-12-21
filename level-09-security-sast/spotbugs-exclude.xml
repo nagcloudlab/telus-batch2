@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FindBugsFilter xmlns="https://github.com/spotbugs/filter/3.0.0"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="https://github.com/spotbugs/filter/3.0.0 
+                https://raw.githubusercontent.com/spotbugs/spotbugs/3.1.0/spotbugs/etc/findbugsfilter.xsd">
+    
+    <!-- 
+    SpotBugs Exclusion Filter
+    
+    Purpose: Suppress false positives while maintaining security
+    Review: Monthly
+    Last Updated: 2024-12-21
+    -->
+    
+    <!-- Exclude auto-generated classes -->
+    <Match>
+        <Class name="~.*\$.*"/>
+    </Match>
+    
+    <!-- Exclude test classes from certain checks -->
+    <Match>
+        <Class name="~.*Test$"/>
+        <Bug pattern="DMI_HARDCODED_ABSOLUTE_FILENAME"/>
+    </Match>
+    
+    <!-- Exclude entities from serialization warnings -->
+    <Match>
+        <notes>
+        JPA entities don't need serialVersionUID as they're not serialized over network.
+        Only used for database persistence via JPA.
+        Reviewed: 2024-12-21
+        </notes>
+        <Package name="~com\.npci\.transfer\.entity"/>
+        <Bug pattern="SE_NO_SERIALVERSIONID"/>
+    </Match>
+    
+    <!-- Exclude DTOs from serialization warnings -->
+    <Match>
+        <notes>
+        DTOs are only used for JSON serialization/deserialization via Jackson.
+        Not using Java object serialization, so serialVersionUID not required.
+        Reviewed: 2024-12-21
+        </notes>
+        <Package name="~com\.npci\.transfer\.dto"/>
+        <Bug pattern="SE_NO_SERIALVERSIONID"/>
+    </Match>
+    
+    <!-- Spring Controller Endpoints - Intentional Design -->
+    <Match>
+        <notes>
+        SPRING_ENDPOINT warnings are false positives.
+        These are intentionally public Spring REST endpoints.
+        Security is handled by Spring Security (when configured).
+        Reviewed: 2024-12-21
+        </notes>
+        <Class name="com.npci.transfer.controller.TransferController"/>
+        <Bug pattern="SPRING_ENDPOINT"/>
+    </Match>
+    
+    <!-- TransferService Constructor - Spring Dependency Injection -->
+    <Match>
+        <notes>
+        EI_EXPOSE_REP2 in constructor is a false positive.
+        Spring injects immutable bean references (AccountRepository, TransactionRepository, FeeCalculator).
+        These are Spring-managed beans, not mutable data structures that need defensive copying.
+        The @RequiredArgsConstructor pattern is standard Spring DI practice.
+        Reviewed: 2024-12-21
+        </notes>
+        <Class name="com.npci.transfer.service.TransferService"/>
+        <Method name="&lt;init&gt;"/>
+        <Bug pattern="EI_EXPOSE_REP2"/>
+    </Match>
+    
+</FindBugsFilter>

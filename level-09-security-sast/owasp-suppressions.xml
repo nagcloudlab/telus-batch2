@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.3.xsd">
+    <!--
+    OWASP Dependency-Check Suppressions
+    
+    This file contains suppressed CVEs that are:
+    1. False positives
+    2. Not applicable to our use case
+    3. Accepted risks (with justification)
+    
+    Review and update this file regularly!
+    -->
+    
+    <!-- Example suppression (remove if not needed)
+    <suppress>
+        <notes><![CDATA[
+        CVE-2021-12345 is a false positive for our usage.
+        We only use feature X which is not affected.
+        ]]></notes>
+        <packageUrl regex="true">^pkg:maven/com\.example/.*$</packageUrl>
+        <cve>CVE-2021-12345</cve>
+    </suppress>
+    -->
+    
+    <!-- Spring Boot Test Scope Dependencies -->
+    <suppress>
+        <notes><![CDATA[
+        Test-scope dependencies are not deployed to production
+        ]]></notes>
+        <gav regex="true">^org\.springframework\.boot:spring-boot-starter-test:.*$</gav>
+    </suppress>
+    
+</suppressions>

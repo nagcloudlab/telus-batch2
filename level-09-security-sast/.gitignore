@@ -1,0 +1,59 @@
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# JaCoCo
+*.exec
+jacoco.xml
+
+# SonarQube
+.sonar/
+.sonarqube/
+*.sonar
+
+# SpotBugs
+spotbugs.xml
+spotbugsXml.html
+
+# OWASP Dependency-Check
+dependency-check-report.html
+dependency-check-report.json
+dependency-check-report.xml
+dependency-check-vulnerability.html
+
+# IDE
+.idea/
+*.iml
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Logs
+*.log
+
+# Compiled
+*.class
+
+# Package Files
+*.jar
+*.war
+*.nar
+*.ear
+*.zip
+*.tar.gz
+*.rar
+
+# Test output
+test-output/
+
+# NVD Database (large, downloaded by Maven)
+.m2/repository/org/owasp/dependency-check-data/

@@ -7,9 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="transfer-service-refactored" />
         <module name="transfer-service-tested" />
-        <module name="transfer-service-tested-with-sonarqube" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -18,6 +16,10 @@
       <module name="transfer-service" target="17" />
       <module name="transfer-service (1)" target="17" />
       <module name="transfer-service (1) (com.demo)" target="17" />
+      <module name="transfer-service-refactored" target="17" />
+      <module name="transfer-service-tested (1)" target="17" />
+      <module name="transfer-service-tested-security" target="17" />
+      <module name="transfer-service-tested-with-sonarqube" target="17" />
       <module name="ui-tests" target="17" />
     </bytecodeTargetLevel>
   </component>
@@ -27,6 +29,8 @@
       <module name="transfer-service (1) (com.demo)" options="-parameters" />
       <module name="transfer-service-refactored" options="-parameters" />
       <module name="transfer-service-tested" options="-parameters" />
+      <module name="transfer-service-tested (1)" options="-parameters" />
+      <module name="transfer-service-tested-security" options="-parameters" />
       <module name="transfer-service-tested-with-sonarqube" options="-parameters" />
     </option>
   </component>
