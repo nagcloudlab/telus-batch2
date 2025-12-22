@@ -1,0 +1,874 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.npci.transfer.contract.TransfersTest" time="17.252" tests="5" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/Users/nag/telus-batch2/level-13-contract-testing/target/test-classes:/Users/nag/telus-batch2/level-13-contract-testing/target/classes:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.0/spring-boot-starter-web-3.2.0.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.0/spring-boot-starter-3.2.0.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot/3.2.0/spring-boot-3.2.0.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.0/spring-boot-autoconfigure-3.2.0.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.0/spring-boot-starter-logging-3.2.0.jar:/Users/nag/.m2/repository/ch/qos/logback/logback-classic/1.4.11/logback-classic-1.4.11.jar:/Users/nag/.m2/repository/ch/qos/logback/logback-core/1.4.11/logback-core-1.4.11.jar:/Users/nag/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar:/Users/nag/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/Users/nag/.m2/repository/org/slf4j/jul-to-slf4j/2.0.9/jul-to-slf4j-2.0.9.jar:/Users/nag/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/nag/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.0/spring-boot-starter-json-3.2.0.jar:/Users/nag/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.jar:/Users/nag/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.jar:/Users/nag/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.3/jackson-datatype-jdk8-2.15.3.jar:/Users/nag/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.3/jackson-datatype-jsr310-2.15.3.jar:/Users/nag/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.3/jackson-module-parameter-names-2.15.3.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.0/spring-boot-starter-tomcat-3.2.0.jar:/Users/nag/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.16/tomcat-embed-core-10.1.16.jar:/Users/nag/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.16/tomcat-embed-websocket-10.1.16.jar:/Users/nag/.m2/repository/org/springframework/spring-web/6.1.1/spring-web-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/spring-beans/6.1.1/spring-beans-6.1.1.jar:/Users/nag/.m2/repository/io/micrometer/micrometer-observation/1.12.0/micrometer-observation-1.12.0.jar:/Users/nag/.m2/repository/io/micrometer/micrometer-commons/1.12.0/micrometer-commons-1.12.0.jar:/Users/nag/.m2/repository/org/springframework/spring-webmvc/6.1.1/spring-webmvc-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/spring-aop/6.1.1/spring-aop-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/spring-context/6.1.1/spring-context-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/spring-expression/6.1.1/spring-expression-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.2.0/spring-boot-starter-data-jpa-3.2.0.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.2.0/spring-boot-starter-aop-3.2.0.jar:/Users/nag/.m2/repository/org/aspectj/aspectjweaver/1.9.20.1/aspectjweaver-1.9.20.1.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.0/spring-boot-starter-jdbc-3.2.0.jar:/Users/nag/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar:/Users/nag/.m2/repository/org/springframework/spring-jdbc/6.1.1/spring-jdbc-6.1.1.jar:/Users/nag/.m2/repository/org/hibernate/orm/hibernate-core/6.3.1.Final/hibernate-core-6.3.1.Final.jar:/Users/nag/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/nag/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/nag/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/Users/nag/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/Users/nag/.m2/repository/io/smallrye/jandex/3.1.2/jandex-3.1.2.jar:/Users/nag/.m2/repository/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar:/Users/nag/.m2/repository/net/bytebuddy/byte-buddy/1.14.10/byte-buddy-1.14.10.jar:/Users/nag/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.4/jaxb-runtime-4.0.4.jar:/Users/nag/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.4/jaxb-core-4.0.4.jar:/Users/nag/.m2/repository/org/eclipse/angus/angus-activation/2.0.1/angus-activation-2.0.1.jar:/Users/nag/.m2/repository/org/glassfish/jaxb/txw2/4.0.4/txw2-4.0.4.jar:/Users/nag/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/Users/nag/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/Users/nag/.m2/repository/org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar:/Users/nag/.m2/repository/org/springframework/data/spring-data-jpa/3.2.0/spring-data-jpa-3.2.0.jar:/Users/nag/.m2/repository/org/springframework/data/spring-data-commons/3.2.0/spring-data-commons-3.2.0.jar:/Users/nag/.m2/repository/org/springframework/spring-orm/6.1.1/spring-orm-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/spring-tx/6.1.1/spring-tx-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/spring-aspects/6.1.1/spring-aspects-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.2.0/spring-boot-starter-validation-3.2.0.jar:/Users/nag/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.16/tomcat-embed-el-10.1.16.jar:/Users/nag/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar:/Users/nag/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/nag/.m2/repository/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.jar:/Users/nag/.m2/repository/org/checkerframework/checker-qual/3.31.0/checker-qual-3.31.0.jar:/Users/nag/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:/Users/nag/.m2/repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.2.0/spring-boot-starter-test-3.2.0.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-test/3.2.0/spring-boot-test-3.2.0.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.2.0/spring-boot-test-autoconfigure-3.2.0.jar:/Users/nag/.m2/repository/com/jayway/jsonpath/json-path/2.8.0/json-path-2.8.0.jar:/Users/nag/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.1/jakarta.xml.bind-api-4.0.1.jar:/Users/nag/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar:/Users/nag/.m2/repository/net/minidev/json-smart/2.5.0/json-smart-2.5.0.jar:/Users/nag/.m2/repository/net/minidev/accessors-smart/2.5.0/accessors-smart-2.5.0.jar:/Users/nag/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/nag/.m2/repository/org/awaitility/awaitility/4.2.0/awaitility-4.2.0.jar:/Users/nag/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/nag/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/Users/nag/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/Users/nag/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/nag/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/Users/nag/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/nag/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/Users/nag/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/Users/nag/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/Users/nag/.m2/repository/org/mockito/mockito-core/5.7.0/mockito-core-5.7.0.jar:/Users/nag/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.10/byte-buddy-agent-1.14.10.jar:/Users/nag/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/nag/.m2/repository/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.jar:/Users/nag/.m2/repository/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar:/Users/nag/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/nag/.m2/repository/org/springframework/spring-core/6.1.1/spring-core-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/spring-jcl/6.1.1/spring-jcl-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/spring-test/6.1.1/spring-test-6.1.1.jar:/Users/nag/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:/Users/nag/.m2/repository/org/testcontainers/testcontainers/1.19.3/testcontainers-1.19.3.jar:/Users/nag/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/nag/.m2/repository/org/hamcrest/hamcrest-core/2.2/hamcrest-core-2.2.jar:/Users/nag/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/Users/nag/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/Users/nag/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/Users/nag/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/Users/nag/.m2/repository/com/github/docker-java/docker-java-api/3.3.4/docker-java-api-3.3.4.jar:/Users/nag/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.jar:/Users/nag/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.3.4/docker-java-transport-zerodep-3.3.4.jar:/Users/nag/.m2/repository/com/github/docker-java/docker-java-transport/3.3.4/docker-java-transport-3.3.4.jar:/Users/nag/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/Users/nag/.m2/repository/org/testcontainers/postgresql/1.19.3/postgresql-1.19.3.jar:/Users/nag/.m2/repository/org/testcontainers/jdbc/1.19.3/jdbc-1.19.3.jar:/Users/nag/.m2/repository/org/testcontainers/database-commons/1.19.3/database-commons-1.19.3.jar:/Users/nag/.m2/repository/org/testcontainers/junit-jupiter/1.19.3/junit-jupiter-1.19.3.jar:/Users/nag/.m2/repository/io/rest-assured/rest-assured/5.4.0/rest-assured-5.4.0.jar:/Users/nag/.m2/repository/org/apache/groovy/groovy/4.0.15/groovy-4.0.15.jar:/Users/nag/.m2/repository/org/apache/groovy/groovy-xml/4.0.15/groovy-xml-4.0.15.jar:/Users/nag/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/nag/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/Users/nag/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/nag/.m2/repository/commons-codec/commons-codec/1.16.0/commons-codec-1.16.0.jar:/Users/nag/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/nag/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/nag/.m2/repository/io/rest-assured/json-path/5.3.2/json-path-5.3.2.jar:/Users/nag/.m2/repository/org/apache/groovy/groovy-json/4.0.15/groovy-json-4.0.15.jar:/Users/nag/.m2/repository/io/rest-assured/rest-assured-common/5.3.2/rest-assured-common-5.3.2.jar:/Users/nag/.m2/repository/io/rest-assured/xml-path/5.3.2/xml-path-5.3.2.jar:/Users/nag/.m2/repository/org/apache/commons/commons-lang3/3.13.0/commons-lang3-3.13.0.jar:/Users/nag/.m2/repository/org/springframework/cloud/spring-cloud-starter-contract-verifier/4.1.0/spring-cloud-starter-contract-verifier-4.1.0.jar:/Users/nag/.m2/repository/org/springframework/cloud/spring-cloud-contract-verifier/4.1.0/spring-cloud-contract-verifier-4.1.0.jar:/Users/nag/.m2/repository/org/springframework/cloud/spring-cloud-contract-spec/4.1.0/spring-cloud-contract-spec-4.1.0.jar:/Users/nag/.m2/repository/org/springframework/cloud/spring-cloud-contract-spec-java/4.1.0/spring-cloud-contract-spec-java-4.1.0.jar:/Users/nag/.m2/repository/dk/brics/automaton/1.12-4/automaton-1.12-4.jar:/Users/nag/.m2/repository/org/springframework/cloud/spring-cloud-contract-spec-groovy/4.1.0/spring-cloud-contract-spec-groovy-4.1.0.jar:/Users/nag/.m2/repository/org/springframework/cloud/spring-cloud-contract-shade/4.1.0/spring-cloud-contract-shade-4.1.0.jar:/Users/nag/.m2/repository/org/apache/commons/commons-text/1.11.0/commons-text-1.11.0.jar:/Users/nag/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/Users/nag/.m2/repository/com/github/tomakehurst/wiremock-jre8-standalone/2.35.1/wiremock-jre8-standalone-2.35.1.jar:/Users/nag/.m2/repository/org/apache/maven/resolver/maven-resolver-api/1.9.18/maven-resolver-api-1.9.18.jar:/Users/nag/.m2/repository/com/rackspace/eclipse/webtools/sourceediting/org.eclipse.wst.xml.xpath2.processor/2.1.100/org.eclipse.wst.xml.xpath2.processor-2.1.100.jar:/Users/nag/.m2/repository/edu/princeton/cup/java-cup/10k/java-cup-10k.jar:/Users/nag/.m2/repository/com/ibm/icu/icu4j/4.6/icu4j-4.6.jar:/Users/nag/.m2/repository/org/apache/groovy/groovy-nio/4.0.15/groovy-nio-4.0.15.jar:/Users/nag/.m2/repository/com/github/jknack/handlebars/4.3.1/handlebars-4.3.1.jar:/Users/nag/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/Users/nag/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/Users/nag/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.15.3/jackson-dataformat-yaml-2.15.3.jar:/Users/nag/.m2/repository/net/javacrumbs/json-unit/json-unit-assertj/2.38.0/json-unit-assertj-2.38.0.jar:/Users/nag/.m2/repository/net/javacrumbs/json-unit/json-unit-core/2.38.0/json-unit-core-2.38.0.jar:/Users/nag/.m2/repository/net/javacrumbs/json-unit/json-unit-json-path/2.38.0/json-unit-json-path-2.38.0.jar:/Users/nag/.m2/repository/io/rest-assured/spring-mock-mvc/5.3.2/spring-mock-mvc-5.3.2.jar:/Users/nag/.m2/repository/io/rest-assured/spring-commons/5.3.2/spring-commons-5.3.2.jar:/Users/nag/.m2/repository/com/toomuchcoding/jsonassert/jsonassert/0.7.0/jsonassert-0.7.0.jar:/Users/nag/.m2/repository/cglib/cglib/3.3.0/cglib-3.3.0.jar:/Users/nag/.m2/repository/org/ow2/asm/asm/7.1/asm-7.1.jar:"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Kolkata"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="GB"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="/Users/nag/telus-batch2/level-13-contract-testing/target/surefire/surefirebooter-20251222111836303_3.jar /Users/nag/telus-batch2/level-13-contract-testing/target/surefire 2025-12-22T11-18-36_009-jvmRun1 surefire-20251222111836303_1tmp surefire_0-20251222111836303_2tmp"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="/Users/nag/telus-batch2/level-13-contract-testing/target/test-classes:/Users/nag/telus-batch2/level-13-contract-testing/target/classes:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter-web/3.2.0/spring-boot-starter-web-3.2.0.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter/3.2.0/spring-boot-starter-3.2.0.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot/3.2.0/spring-boot-3.2.0.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-autoconfigure/3.2.0/spring-boot-autoconfigure-3.2.0.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter-logging/3.2.0/spring-boot-starter-logging-3.2.0.jar:/Users/nag/.m2/repository/ch/qos/logback/logback-classic/1.4.11/logback-classic-1.4.11.jar:/Users/nag/.m2/repository/ch/qos/logback/logback-core/1.4.11/logback-core-1.4.11.jar:/Users/nag/.m2/repository/org/apache/logging/log4j/log4j-to-slf4j/2.21.1/log4j-to-slf4j-2.21.1.jar:/Users/nag/.m2/repository/org/apache/logging/log4j/log4j-api/2.21.1/log4j-api-2.21.1.jar:/Users/nag/.m2/repository/org/slf4j/jul-to-slf4j/2.0.9/jul-to-slf4j-2.0.9.jar:/Users/nag/.m2/repository/jakarta/annotation/jakarta.annotation-api/2.1.1/jakarta.annotation-api-2.1.1.jar:/Users/nag/.m2/repository/org/yaml/snakeyaml/2.2/snakeyaml-2.2.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter-json/3.2.0/spring-boot-starter-json-3.2.0.jar:/Users/nag/.m2/repository/com/fasterxml/jackson/core/jackson-databind/2.15.3/jackson-databind-2.15.3.jar:/Users/nag/.m2/repository/com/fasterxml/jackson/core/jackson-core/2.15.3/jackson-core-2.15.3.jar:/Users/nag/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jdk8/2.15.3/jackson-datatype-jdk8-2.15.3.jar:/Users/nag/.m2/repository/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.15.3/jackson-datatype-jsr310-2.15.3.jar:/Users/nag/.m2/repository/com/fasterxml/jackson/module/jackson-module-parameter-names/2.15.3/jackson-module-parameter-names-2.15.3.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter-tomcat/3.2.0/spring-boot-starter-tomcat-3.2.0.jar:/Users/nag/.m2/repository/org/apache/tomcat/embed/tomcat-embed-core/10.1.16/tomcat-embed-core-10.1.16.jar:/Users/nag/.m2/repository/org/apache/tomcat/embed/tomcat-embed-websocket/10.1.16/tomcat-embed-websocket-10.1.16.jar:/Users/nag/.m2/repository/org/springframework/spring-web/6.1.1/spring-web-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/spring-beans/6.1.1/spring-beans-6.1.1.jar:/Users/nag/.m2/repository/io/micrometer/micrometer-observation/1.12.0/micrometer-observation-1.12.0.jar:/Users/nag/.m2/repository/io/micrometer/micrometer-commons/1.12.0/micrometer-commons-1.12.0.jar:/Users/nag/.m2/repository/org/springframework/spring-webmvc/6.1.1/spring-webmvc-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/spring-aop/6.1.1/spring-aop-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/spring-context/6.1.1/spring-context-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/spring-expression/6.1.1/spring-expression-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter-data-jpa/3.2.0/spring-boot-starter-data-jpa-3.2.0.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter-aop/3.2.0/spring-boot-starter-aop-3.2.0.jar:/Users/nag/.m2/repository/org/aspectj/aspectjweaver/1.9.20.1/aspectjweaver-1.9.20.1.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter-jdbc/3.2.0/spring-boot-starter-jdbc-3.2.0.jar:/Users/nag/.m2/repository/com/zaxxer/HikariCP/5.0.1/HikariCP-5.0.1.jar:/Users/nag/.m2/repository/org/springframework/spring-jdbc/6.1.1/spring-jdbc-6.1.1.jar:/Users/nag/.m2/repository/org/hibernate/orm/hibernate-core/6.3.1.Final/hibernate-core-6.3.1.Final.jar:/Users/nag/.m2/repository/jakarta/persistence/jakarta.persistence-api/3.1.0/jakarta.persistence-api-3.1.0.jar:/Users/nag/.m2/repository/jakarta/transaction/jakarta.transaction-api/2.0.1/jakarta.transaction-api-2.0.1.jar:/Users/nag/.m2/repository/org/jboss/logging/jboss-logging/3.5.3.Final/jboss-logging-3.5.3.Final.jar:/Users/nag/.m2/repository/org/hibernate/common/hibernate-commons-annotations/6.0.6.Final/hibernate-commons-annotations-6.0.6.Final.jar:/Users/nag/.m2/repository/io/smallrye/jandex/3.1.2/jandex-3.1.2.jar:/Users/nag/.m2/repository/com/fasterxml/classmate/1.6.0/classmate-1.6.0.jar:/Users/nag/.m2/repository/net/bytebuddy/byte-buddy/1.14.10/byte-buddy-1.14.10.jar:/Users/nag/.m2/repository/org/glassfish/jaxb/jaxb-runtime/4.0.4/jaxb-runtime-4.0.4.jar:/Users/nag/.m2/repository/org/glassfish/jaxb/jaxb-core/4.0.4/jaxb-core-4.0.4.jar:/Users/nag/.m2/repository/org/eclipse/angus/angus-activation/2.0.1/angus-activation-2.0.1.jar:/Users/nag/.m2/repository/org/glassfish/jaxb/txw2/4.0.4/txw2-4.0.4.jar:/Users/nag/.m2/repository/com/sun/istack/istack-commons-runtime/4.1.2/istack-commons-runtime-4.1.2.jar:/Users/nag/.m2/repository/jakarta/inject/jakarta.inject-api/2.0.1/jakarta.inject-api-2.0.1.jar:/Users/nag/.m2/repository/org/antlr/antlr4-runtime/4.10.1/antlr4-runtime-4.10.1.jar:/Users/nag/.m2/repository/org/springframework/data/spring-data-jpa/3.2.0/spring-data-jpa-3.2.0.jar:/Users/nag/.m2/repository/org/springframework/data/spring-data-commons/3.2.0/spring-data-commons-3.2.0.jar:/Users/nag/.m2/repository/org/springframework/spring-orm/6.1.1/spring-orm-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/spring-tx/6.1.1/spring-tx-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/spring-aspects/6.1.1/spring-aspects-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter-validation/3.2.0/spring-boot-starter-validation-3.2.0.jar:/Users/nag/.m2/repository/org/apache/tomcat/embed/tomcat-embed-el/10.1.16/tomcat-embed-el-10.1.16.jar:/Users/nag/.m2/repository/org/hibernate/validator/hibernate-validator/8.0.1.Final/hibernate-validator-8.0.1.Final.jar:/Users/nag/.m2/repository/jakarta/validation/jakarta.validation-api/3.0.2/jakarta.validation-api-3.0.2.jar:/Users/nag/.m2/repository/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.jar:/Users/nag/.m2/repository/org/checkerframework/checker-qual/3.31.0/checker-qual-3.31.0.jar:/Users/nag/.m2/repository/com/h2database/h2/2.2.224/h2-2.2.224.jar:/Users/nag/.m2/repository/org/projectlombok/lombok/1.18.30/lombok-1.18.30.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-starter-test/3.2.0/spring-boot-starter-test-3.2.0.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-test/3.2.0/spring-boot-test-3.2.0.jar:/Users/nag/.m2/repository/org/springframework/boot/spring-boot-test-autoconfigure/3.2.0/spring-boot-test-autoconfigure-3.2.0.jar:/Users/nag/.m2/repository/com/jayway/jsonpath/json-path/2.8.0/json-path-2.8.0.jar:/Users/nag/.m2/repository/jakarta/xml/bind/jakarta.xml.bind-api/4.0.1/jakarta.xml.bind-api-4.0.1.jar:/Users/nag/.m2/repository/jakarta/activation/jakarta.activation-api/2.1.2/jakarta.activation-api-2.1.2.jar:/Users/nag/.m2/repository/net/minidev/json-smart/2.5.0/json-smart-2.5.0.jar:/Users/nag/.m2/repository/net/minidev/accessors-smart/2.5.0/accessors-smart-2.5.0.jar:/Users/nag/.m2/repository/org/assertj/assertj-core/3.24.2/assertj-core-3.24.2.jar:/Users/nag/.m2/repository/org/awaitility/awaitility/4.2.0/awaitility-4.2.0.jar:/Users/nag/.m2/repository/org/hamcrest/hamcrest/2.2/hamcrest-2.2.jar:/Users/nag/.m2/repository/org/junit/jupiter/junit-jupiter/5.10.1/junit-jupiter-5.10.1.jar:/Users/nag/.m2/repository/org/junit/jupiter/junit-jupiter-api/5.10.1/junit-jupiter-api-5.10.1.jar:/Users/nag/.m2/repository/org/opentest4j/opentest4j/1.3.0/opentest4j-1.3.0.jar:/Users/nag/.m2/repository/org/junit/platform/junit-platform-commons/1.10.1/junit-platform-commons-1.10.1.jar:/Users/nag/.m2/repository/org/apiguardian/apiguardian-api/1.1.2/apiguardian-api-1.1.2.jar:/Users/nag/.m2/repository/org/junit/jupiter/junit-jupiter-params/5.10.1/junit-jupiter-params-5.10.1.jar:/Users/nag/.m2/repository/org/junit/jupiter/junit-jupiter-engine/5.10.1/junit-jupiter-engine-5.10.1.jar:/Users/nag/.m2/repository/org/junit/platform/junit-platform-engine/1.10.1/junit-platform-engine-1.10.1.jar:/Users/nag/.m2/repository/org/mockito/mockito-core/5.7.0/mockito-core-5.7.0.jar:/Users/nag/.m2/repository/net/bytebuddy/byte-buddy-agent/1.14.10/byte-buddy-agent-1.14.10.jar:/Users/nag/.m2/repository/org/objenesis/objenesis/3.3/objenesis-3.3.jar:/Users/nag/.m2/repository/org/mockito/mockito-junit-jupiter/5.7.0/mockito-junit-jupiter-5.7.0.jar:/Users/nag/.m2/repository/org/skyscreamer/jsonassert/1.5.1/jsonassert-1.5.1.jar:/Users/nag/.m2/repository/com/vaadin/external/google/android-json/0.0.20131108.vaadin1/android-json-0.0.20131108.vaadin1.jar:/Users/nag/.m2/repository/org/springframework/spring-core/6.1.1/spring-core-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/spring-jcl/6.1.1/spring-jcl-6.1.1.jar:/Users/nag/.m2/repository/org/springframework/spring-test/6.1.1/spring-test-6.1.1.jar:/Users/nag/.m2/repository/org/xmlunit/xmlunit-core/2.9.1/xmlunit-core-2.9.1.jar:/Users/nag/.m2/repository/org/testcontainers/testcontainers/1.19.3/testcontainers-1.19.3.jar:/Users/nag/.m2/repository/junit/junit/4.13.2/junit-4.13.2.jar:/Users/nag/.m2/repository/org/hamcrest/hamcrest-core/2.2/hamcrest-core-2.2.jar:/Users/nag/.m2/repository/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/Users/nag/.m2/repository/org/apache/commons/commons-compress/1.24.0/commons-compress-1.24.0.jar:/Users/nag/.m2/repository/org/rnorth/duct-tape/duct-tape/1.0.8/duct-tape-1.0.8.jar:/Users/nag/.m2/repository/org/jetbrains/annotations/17.0.0/annotations-17.0.0.jar:/Users/nag/.m2/repository/com/github/docker-java/docker-java-api/3.3.4/docker-java-api-3.3.4.jar:/Users/nag/.m2/repository/com/fasterxml/jackson/core/jackson-annotations/2.15.3/jackson-annotations-2.15.3.jar:/Users/nag/.m2/repository/com/github/docker-java/docker-java-transport-zerodep/3.3.4/docker-java-transport-zerodep-3.3.4.jar:/Users/nag/.m2/repository/com/github/docker-java/docker-java-transport/3.3.4/docker-java-transport-3.3.4.jar:/Users/nag/.m2/repository/net/java/dev/jna/jna/5.13.0/jna-5.13.0.jar:/Users/nag/.m2/repository/org/testcontainers/postgresql/1.19.3/postgresql-1.19.3.jar:/Users/nag/.m2/repository/org/testcontainers/jdbc/1.19.3/jdbc-1.19.3.jar:/Users/nag/.m2/repository/org/testcontainers/database-commons/1.19.3/database-commons-1.19.3.jar:/Users/nag/.m2/repository/org/testcontainers/junit-jupiter/1.19.3/junit-jupiter-1.19.3.jar:/Users/nag/.m2/repository/io/rest-assured/rest-assured/5.4.0/rest-assured-5.4.0.jar:/Users/nag/.m2/repository/org/apache/groovy/groovy/4.0.15/groovy-4.0.15.jar:/Users/nag/.m2/repository/org/apache/groovy/groovy-xml/4.0.15/groovy-xml-4.0.15.jar:/Users/nag/.m2/repository/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/Users/nag/.m2/repository/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/Users/nag/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/Users/nag/.m2/repository/commons-codec/commons-codec/1.16.0/commons-codec-1.16.0.jar:/Users/nag/.m2/repository/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar:/Users/nag/.m2/repository/org/ccil/cowan/tagsoup/tagsoup/1.2.1/tagsoup-1.2.1.jar:/Users/nag/.m2/repository/io/rest-assured/json-path/5.3.2/json-path-5.3.2.jar:/Users/nag/.m2/repository/org/apache/groovy/groovy-json/4.0.15/groovy-json-4.0.15.jar:/Users/nag/.m2/repository/io/rest-assured/rest-assured-common/5.3.2/rest-assured-common-5.3.2.jar:/Users/nag/.m2/repository/io/rest-assured/xml-path/5.3.2/xml-path-5.3.2.jar:/Users/nag/.m2/repository/org/apache/commons/commons-lang3/3.13.0/commons-lang3-3.13.0.jar:/Users/nag/.m2/repository/org/springframework/cloud/spring-cloud-starter-contract-verifier/4.1.0/spring-cloud-starter-contract-verifier-4.1.0.jar:/Users/nag/.m2/repository/org/springframework/cloud/spring-cloud-contract-verifier/4.1.0/spring-cloud-contract-verifier-4.1.0.jar:/Users/nag/.m2/repository/org/springframework/cloud/spring-cloud-contract-spec/4.1.0/spring-cloud-contract-spec-4.1.0.jar:/Users/nag/.m2/repository/org/springframework/cloud/spring-cloud-contract-spec-java/4.1.0/spring-cloud-contract-spec-java-4.1.0.jar:/Users/nag/.m2/repository/dk/brics/automaton/1.12-4/automaton-1.12-4.jar:/Users/nag/.m2/repository/org/springframework/cloud/spring-cloud-contract-spec-groovy/4.1.0/spring-cloud-contract-spec-groovy-4.1.0.jar:/Users/nag/.m2/repository/org/springframework/cloud/spring-cloud-contract-shade/4.1.0/spring-cloud-contract-shade-4.1.0.jar:/Users/nag/.m2/repository/org/apache/commons/commons-text/1.11.0/commons-text-1.11.0.jar:/Users/nag/.m2/repository/javax/inject/javax.inject/1/javax.inject-1.jar:/Users/nag/.m2/repository/com/github/tomakehurst/wiremock-jre8-standalone/2.35.1/wiremock-jre8-standalone-2.35.1.jar:/Users/nag/.m2/repository/org/apache/maven/resolver/maven-resolver-api/1.9.18/maven-resolver-api-1.9.18.jar:/Users/nag/.m2/repository/com/rackspace/eclipse/webtools/sourceediting/org.eclipse.wst.xml.xpath2.processor/2.1.100/org.eclipse.wst.xml.xpath2.processor-2.1.100.jar:/Users/nag/.m2/repository/edu/princeton/cup/java-cup/10k/java-cup-10k.jar:/Users/nag/.m2/repository/com/ibm/icu/icu4j/4.6/icu4j-4.6.jar:/Users/nag/.m2/repository/org/apache/groovy/groovy-nio/4.0.15/groovy-nio-4.0.15.jar:/Users/nag/.m2/repository/com/github/jknack/handlebars/4.3.1/handlebars-4.3.1.jar:/Users/nag/.m2/repository/commons-beanutils/commons-beanutils/1.9.4/commons-beanutils-1.9.4.jar:/Users/nag/.m2/repository/commons-collections/commons-collections/3.2.2/commons-collections-3.2.2.jar:/Users/nag/.m2/repository/com/fasterxml/jackson/dataformat/jackson-dataformat-yaml/2.15.3/jackson-dataformat-yaml-2.15.3.jar:/Users/nag/.m2/repository/net/javacrumbs/json-unit/json-unit-assertj/2.38.0/json-unit-assertj-2.38.0.jar:/Users/nag/.m2/repository/net/javacrumbs/json-unit/json-unit-core/2.38.0/json-unit-core-2.38.0.jar:/Users/nag/.m2/repository/net/javacrumbs/json-unit/json-unit-json-path/2.38.0/json-unit-json-path-2.38.0.jar:/Users/nag/.m2/repository/io/rest-assured/spring-mock-mvc/5.3.2/spring-mock-mvc-5.3.2.jar:/Users/nag/.m2/repository/io/rest-assured/spring-commons/5.3.2/spring-commons-5.3.2.jar:/Users/nag/.m2/repository/com/toomuchcoding/jsonassert/jsonassert/0.7.0/jsonassert-0.7.0.jar:/Users/nag/.m2/repository/cglib/cglib/3.3.0/cglib-3.3.0.jar:/Users/nag/.m2/repository/org/ow2/asm/asm/7.1/asm-7.1.jar:"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/nag"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2023-07-18"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="basedir" value="/Users/nag/telus-batch2/level-13-contract-testing"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="/Users/nag/telus-batch2/level-13-contract-testing/target/surefire/surefirebooter-20251222111836303_3.jar"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="17.0.8+9-LTS-211"/>
+    <property name="user.name" value="nag"/>
+    <property name="path.separator" value=":"/>
+    <property name="os.version" value="12.7.5"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="/Users/nag/.m2/repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/ng/r5gmmyl54bbgwb6q70q1cb480000gn/T/"/>
+    <property name="com.zaxxer.hikari.pool_number" value="6"/>
+    <property name="java.version" value="17.0.8"/>
+    <property name="user.dir" value="/Users/nag/telus-batch2/level-13-contract-testing"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="50010"/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/Users/nag/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="17.0.8+9-LTS-211"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.class.version" value="61.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[transfer-service] "/>
+  </properties>
+  <testcase name="validate_shouldReturnBadRequestForNegativeAmount" classname="com.npci.transfer.contract.TransfersTest" time="2.36">
+    <system-out><![CDATA[2025-12-22T11:18:53.595+05:30  INFO 50010 --- [transfer-service] [           main] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [com.npci.transfer.contract.TransfersTest]: TransfersTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-12-22T11:18:53.625+05:30  INFO 50010 --- [transfer-service] [           main] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration com.npci.transfer.TransferServiceApplication for test class com.npci.transfer.contract.TransfersTest
+2025-12-22T11:18:53.726+05:30  INFO 50010 --- [transfer-service] [           main] org.testcontainers.images.PullPolicy     : Image pull policy will be performed by: DefaultPullPolicy()
+2025-12-22T11:18:53.730+05:30  INFO 50010 --- [transfer-service] [           main] o.t.utility.ImageNameSubstitutor         : Image name substitution will be performed by: DefaultImageNameSubstitutor (composite of 'ConfigurationFileImageNameSubstitutor' and 'PrefixingImageNameSubstitutor')
+2025-12-22T11:18:54.618+05:30  INFO 50010 --- [transfer-service] [           main] o.t.d.DockerClientProviderStrategy       : Loaded org.testcontainers.dockerclient.UnixSocketClientProviderStrategy from ~/.testcontainers.properties, will try it first
+2025-12-22T11:18:55.332+05:30  INFO 50010 --- [transfer-service] [           main] o.t.d.DockerClientProviderStrategy       : Found Docker environment with local Unix socket (unix:///var/run/docker.sock)
+2025-12-22T11:18:55.335+05:30  INFO 50010 --- [transfer-service] [           main] org.testcontainers.DockerClientFactory   : Docker host IP address is localhost
+2025-12-22T11:18:55.388+05:30  INFO 50010 --- [transfer-service] [           main] org.testcontainers.DockerClientFactory   : Connected to docker: 
+  Server Version: 20.10.21
+  API Version: 1.41
+  Operating System: Docker Desktop
+  Total Memory: 7959 MB
+2025-12-22T11:18:55.472+05:30  INFO 50010 --- [transfer-service] [           main] tc.testcontainers/ryuk:0.5.1             : Creating container for image: testcontainers/ryuk:0.5.1
+2025-12-22T11:18:56.376+05:30  INFO 50010 --- [transfer-service] [           main] tc.testcontainers/ryuk:0.5.1             : Container testcontainers/ryuk:0.5.1 is starting: 50e53af49132cd2c5bb1595a4b1fca421e43b8ff664686dc6f3fc10b0c0f0d63
+2025-12-22T11:18:57.220+05:30  INFO 50010 --- [transfer-service] [           main] tc.testcontainers/ryuk:0.5.1             : Container testcontainers/ryuk:0.5.1 started in PT1.747353S
+2025-12-22T11:18:57.237+05:30  INFO 50010 --- [transfer-service] [           main] o.t.utility.RyukResourceReaper           : Ryuk started - will monitor and terminate Testcontainers containers on JVM exit
+2025-12-22T11:18:57.237+05:30  INFO 50010 --- [transfer-service] [           main] org.testcontainers.DockerClientFactory   : Checking the system...
+2025-12-22T11:18:57.238+05:30  INFO 50010 --- [transfer-service] [           main] org.testcontainers.DockerClientFactory   : ✔︎ Docker server version should be at least 1.6.0
+2025-12-22T11:18:57.239+05:30  INFO 50010 --- [transfer-service] [           main] tc.postgres:15-alpine                    : Creating container for image: postgres:15-alpine
+2025-12-22T11:18:57.240+05:30  WARN 50010 --- [transfer-service] [           main] tc.postgres:15-alpine                    : Reuse was requested but the environment does not support the reuse of containers
+To enable reuse of containers, you must set 'testcontainers.reuse.enable=true' in a file located at /Users/nag/.testcontainers.properties
+2025-12-22T11:18:57.320+05:30  INFO 50010 --- [transfer-service] [           main] tc.postgres:15-alpine                    : Container postgres:15-alpine is starting: 731ab92dbfa15f0d03700fb70f39e50c0fc90e16d03d24bc67332655c487b1dd
+2025-12-22T11:19:01.046+05:30  INFO 50010 --- [transfer-service] [           main] tc.postgres:15-alpine                    : Container postgres:15-alpine started in PT3.807272S
+2025-12-22T11:19:01.047+05:30  INFO 50010 --- [transfer-service] [           main] tc.postgres:15-alpine                    : Container is started (JDBC URL: jdbc:postgresql://localhost:56003/transfer_test_db?loggerLevel=OFF)
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-12-22T11:19:01.132+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.contract.TransfersTest   : Starting TransfersTest using Java 17.0.8 with PID 50010 (started by nag in /Users/nag/telus-batch2/level-13-contract-testing)
+2025-12-22T11:19:01.132+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.contract.TransfersTest   : The following 1 profile is active: "test"
+2025-12-22T11:19:01.692+05:30  INFO 50010 --- [transfer-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-22T11:19:01.707+05:30  INFO 50010 --- [transfer-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 2 JPA repository interfaces.
+2025-12-22T11:19:02.074+05:30  INFO 50010 --- [transfer-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-22T11:19:02.078+05:30  INFO 50010 --- [transfer-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-22T11:19:02.082+05:30  INFO 50010 --- [transfer-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-22T11:19:02.085+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-12-22T11:19:02.494+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@f7bbab2
+2025-12-22T11:19:02.498+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-12-22T11:19:02.538+05:30  WARN 50010 --- [transfer-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-22T11:19:02.697+05:30  INFO 50010 --- [transfer-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-22T11:19:02.698+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists accounts cascade
+2025-12-22T11:19:02.705+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-12-22T11:19:02.705+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "accounts" does not exist, skipping
+2025-12-22T11:19:02.705+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists transactions cascade
+2025-12-22T11:19:02.708+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-12-22T11:19:02.708+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "transactions" does not exist, skipping
+2025-12-22T11:19:02.710+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    create table accounts (
+        balance numeric(15,2) not null,
+        daily_limit numeric(15,2),
+        daily_used numeric(15,2),
+        monthly_limit numeric(15,2),
+        monthly_used numeric(15,2),
+        id bigserial not null,
+        phone varchar(255) not null,
+        status varchar(255) not null,
+        upi_id varchar(255) not null unique,
+        primary key (id)
+    )
+2025-12-22T11:19:02.727+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    create table transactions (
+        amount numeric(15,2) not null,
+        fee numeric(15,2),
+        total_debited numeric(15,2),
+        id bigserial not null,
+        timestamp timestamp(6) not null,
+        destination_upi varchar(255) not null,
+        remarks varchar(255),
+        source_upi varchar(255) not null,
+        status varchar(255) not null,
+        transaction_id varchar(255) not null unique,
+        primary key (id)
+    )
+2025-12-22T11:19:02.736+05:30  INFO 50010 --- [transfer-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-22T11:19:03.157+05:30  WARN 50010 --- [transfer-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-22T11:19:03.718+05:30  INFO 50010 --- [transfer-service] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:56003/transfer_test_db?loggerLevel=OFF'
+2025-12-22T11:19:03.771+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.contract.TransfersTest   : Started TransfersTest in 2.708 seconds (process running for 27.241)
+2025-12-22T11:19:03.797+05:30  INFO 50010 --- [transfer-service] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-22T11:19:03.798+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists accounts cascade
+2025-12-22T11:19:03.810+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists transactions cascade
+2025-12-22T11:19:03.824+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-12-22T11:19:03.828+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-12-22T11:19:03.881+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.contract.TransfersTest   : Starting TransfersTest using Java 17.0.8 with PID 50010 (started by nag in /Users/nag/telus-batch2/level-13-contract-testing)
+2025-12-22T11:19:03.882+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.contract.TransfersTest   : The following 1 profile is active: "test"
+2025-12-22T11:19:04.076+05:30  INFO 50010 --- [transfer-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-22T11:19:04.089+05:30  INFO 50010 --- [transfer-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 2 JPA repository interfaces.
+2025-12-22T11:19:04.220+05:30  INFO 50010 --- [transfer-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-22T11:19:04.223+05:30  INFO 50010 --- [transfer-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-22T11:19:04.227+05:30  INFO 50010 --- [transfer-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-22T11:19:04.228+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2025-12-22T11:19:04.311+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-2 - Added connection org.postgresql.jdbc.PgConnection@2534aba
+2025-12-22T11:19:04.311+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2025-12-22T11:19:04.319+05:30  WARN 50010 --- [transfer-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-22T11:19:04.449+05:30  INFO 50010 --- [transfer-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-22T11:19:04.450+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists accounts cascade
+2025-12-22T11:19:04.453+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-12-22T11:19:04.453+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "accounts" does not exist, skipping
+2025-12-22T11:19:04.453+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists transactions cascade
+2025-12-22T11:19:04.458+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-12-22T11:19:04.458+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "transactions" does not exist, skipping
+2025-12-22T11:19:04.459+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    create table accounts (
+        balance numeric(15,2) not null,
+        daily_limit numeric(15,2),
+        daily_used numeric(15,2),
+        monthly_limit numeric(15,2),
+        monthly_used numeric(15,2),
+        id bigserial not null,
+        phone varchar(255) not null,
+        status varchar(255) not null,
+        upi_id varchar(255) not null unique,
+        primary key (id)
+    )
+2025-12-22T11:19:04.478+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    create table transactions (
+        amount numeric(15,2) not null,
+        fee numeric(15,2),
+        total_debited numeric(15,2),
+        id bigserial not null,
+        timestamp timestamp(6) not null,
+        destination_upi varchar(255) not null,
+        remarks varchar(255),
+        source_upi varchar(255) not null,
+        status varchar(255) not null,
+        transaction_id varchar(255) not null unique,
+        primary key (id)
+    )
+2025-12-22T11:19:04.489+05:30  INFO 50010 --- [transfer-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-22T11:19:04.703+05:30  WARN 50010 --- [transfer-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-22T11:19:04.858+05:30  INFO 50010 --- [transfer-service] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:56003/transfer_test_db?loggerLevel=OFF'
+2025-12-22T11:19:04.906+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.contract.TransfersTest   : Started TransfersTest in 1.074 seconds (process running for 28.376)
+2025-12-22T11:19:04.935+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    select
+        t1_0.id,
+        t1_0.amount,
+        t1_0.destination_upi,
+        t1_0.fee,
+        t1_0.remarks,
+        t1_0.source_upi,
+        t1_0.status,
+        t1_0.timestamp,
+        t1_0.total_debited,
+        t1_0.transaction_id 
+    from
+        transactions t1_0
+2025-12-22T11:19:04.970+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.balance,
+        a1_0.daily_limit,
+        a1_0.daily_used,
+        a1_0.monthly_limit,
+        a1_0.monthly_used,
+        a1_0.phone,
+        a1_0.status,
+        a1_0.upi_id 
+    from
+        accounts a1_0
+2025-12-22T11:19:04.996+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accounts
+        (balance, daily_limit, daily_used, monthly_limit, monthly_used, phone, status, upi_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-22T11:19:05.018+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accounts
+        (balance, daily_limit, daily_used, monthly_limit, monthly_used, phone, status, upi_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-22T11:19:05.026+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accounts
+        (balance, daily_limit, daily_used, monthly_limit, monthly_used, phone, status, upi_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-22T11:19:05.362+05:30  INFO 50010 --- [transfer-service] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-12-22T11:19:05.363+05:30  INFO 50010 --- [transfer-service] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-12-22T11:19:05.366+05:30  INFO 50010 --- [transfer-service] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2025-12-22T11:19:05.777+05:30  WARN 50010 --- [transfer-service] [           main] c.n.t.exception.GlobalExceptionHandler   : Validation errors: 1
+]]></system-out>
+  </testcase>
+  <testcase name="validate_shouldReturnBadRequestForInsufficientBalance" classname="com.npci.transfer.contract.TransfersTest" time="1.557">
+    <system-out><![CDATA[2025-12-22T11:19:06.157+05:30  INFO 50010 --- [transfer-service] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-22T11:19:06.158+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists accounts cascade
+2025-12-22T11:19:06.177+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists transactions cascade
+2025-12-22T11:19:06.187+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2025-12-22T11:19:06.188+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-12-22T11:19:06.257+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.contract.TransfersTest   : Starting TransfersTest using Java 17.0.8 with PID 50010 (started by nag in /Users/nag/telus-batch2/level-13-contract-testing)
+2025-12-22T11:19:06.258+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.contract.TransfersTest   : The following 1 profile is active: "test"
+2025-12-22T11:19:06.497+05:30  INFO 50010 --- [transfer-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-22T11:19:06.519+05:30  INFO 50010 --- [transfer-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 21 ms. Found 2 JPA repository interfaces.
+2025-12-22T11:19:06.664+05:30  INFO 50010 --- [transfer-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-22T11:19:06.668+05:30  INFO 50010 --- [transfer-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-22T11:19:06.674+05:30  INFO 50010 --- [transfer-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-22T11:19:06.676+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2025-12-22T11:19:06.777+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-3 - Added connection org.postgresql.jdbc.PgConnection@75cf2b19
+2025-12-22T11:19:06.778+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2025-12-22T11:19:06.788+05:30  WARN 50010 --- [transfer-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-22T11:19:06.961+05:30  INFO 50010 --- [transfer-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-22T11:19:06.962+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists accounts cascade
+2025-12-22T11:19:06.969+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-12-22T11:19:06.969+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "accounts" does not exist, skipping
+2025-12-22T11:19:06.969+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists transactions cascade
+2025-12-22T11:19:06.973+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-12-22T11:19:06.973+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "transactions" does not exist, skipping
+2025-12-22T11:19:06.976+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    create table accounts (
+        balance numeric(15,2) not null,
+        daily_limit numeric(15,2),
+        daily_used numeric(15,2),
+        monthly_limit numeric(15,2),
+        monthly_used numeric(15,2),
+        id bigserial not null,
+        phone varchar(255) not null,
+        status varchar(255) not null,
+        upi_id varchar(255) not null unique,
+        primary key (id)
+    )
+2025-12-22T11:19:07.001+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    create table transactions (
+        amount numeric(15,2) not null,
+        fee numeric(15,2),
+        total_debited numeric(15,2),
+        id bigserial not null,
+        timestamp timestamp(6) not null,
+        destination_upi varchar(255) not null,
+        remarks varchar(255),
+        source_upi varchar(255) not null,
+        status varchar(255) not null,
+        transaction_id varchar(255) not null unique,
+        primary key (id)
+    )
+2025-12-22T11:19:07.017+05:30  INFO 50010 --- [transfer-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-22T11:19:07.319+05:30  WARN 50010 --- [transfer-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-22T11:19:07.484+05:30  INFO 50010 --- [transfer-service] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:56003/transfer_test_db?loggerLevel=OFF'
+2025-12-22T11:19:07.532+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.contract.TransfersTest   : Started TransfersTest in 1.338 seconds (process running for 31.003)
+2025-12-22T11:19:07.542+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    select
+        t1_0.id,
+        t1_0.amount,
+        t1_0.destination_upi,
+        t1_0.fee,
+        t1_0.remarks,
+        t1_0.source_upi,
+        t1_0.status,
+        t1_0.timestamp,
+        t1_0.total_debited,
+        t1_0.transaction_id 
+    from
+        transactions t1_0
+2025-12-22T11:19:07.552+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.balance,
+        a1_0.daily_limit,
+        a1_0.daily_used,
+        a1_0.monthly_limit,
+        a1_0.monthly_used,
+        a1_0.phone,
+        a1_0.status,
+        a1_0.upi_id 
+    from
+        accounts a1_0
+2025-12-22T11:19:07.578+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accounts
+        (balance, daily_limit, daily_used, monthly_limit, monthly_used, phone, status, upi_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-22T11:19:07.588+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accounts
+        (balance, daily_limit, daily_used, monthly_limit, monthly_used, phone, status, upi_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-22T11:19:07.600+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accounts
+        (balance, daily_limit, daily_used, monthly_limit, monthly_used, phone, status, upi_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-22T11:19:07.611+05:30  INFO 50010 --- [transfer-service] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-12-22T11:19:07.612+05:30  INFO 50010 --- [transfer-service] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-12-22T11:19:07.615+05:30  INFO 50010 --- [transfer-service] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 3 ms
+2025-12-22T11:19:07.641+05:30  INFO 50010 --- [transfer-service] [           main] c.n.t.controller.TransferController      : Received transfer request from charlie@okaxis to bob@paytm
+2025-12-22T11:19:07.651+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.balance,
+        a1_0.daily_limit,
+        a1_0.daily_used,
+        a1_0.monthly_limit,
+        a1_0.monthly_used,
+        a1_0.phone,
+        a1_0.status,
+        a1_0.upi_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.upi_id=?
+2025-12-22T11:19:07.670+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.balance,
+        a1_0.daily_limit,
+        a1_0.daily_used,
+        a1_0.monthly_limit,
+        a1_0.monthly_used,
+        a1_0.phone,
+        a1_0.status,
+        a1_0.upi_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.upi_id=?
+2025-12-22T11:19:07.678+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.service.TransferService  : Initiating transfer from charlie@okaxis to bob@paytm for amount 500.00
+2025-12-22T11:19:07.686+05:30  WARN 50010 --- [transfer-service] [           main] c.n.t.exception.GlobalExceptionHandler   : Insufficient balance: Insufficient balance. Available: ₹100.00, Required: ₹500.00
+]]></system-out>
+  </testcase>
+  <testcase name="validate_shouldReturnBadRequestForMissingFields" classname="com.npci.transfer.contract.TransfersTest" time="1.1">
+    <system-out><![CDATA[2025-12-22T11:19:07.716+05:30  INFO 50010 --- [transfer-service] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-22T11:19:07.717+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists accounts cascade
+2025-12-22T11:19:07.733+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists transactions cascade
+2025-12-22T11:19:07.746+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2025-12-22T11:19:07.748+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-12-22T11:19:07.814+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.contract.TransfersTest   : Starting TransfersTest using Java 17.0.8 with PID 50010 (started by nag in /Users/nag/telus-batch2/level-13-contract-testing)
+2025-12-22T11:19:07.815+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.contract.TransfersTest   : The following 1 profile is active: "test"
+2025-12-22T11:19:08.030+05:30  INFO 50010 --- [transfer-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-22T11:19:08.046+05:30  INFO 50010 --- [transfer-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 15 ms. Found 2 JPA repository interfaces.
+2025-12-22T11:19:08.161+05:30  INFO 50010 --- [transfer-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-22T11:19:08.164+05:30  INFO 50010 --- [transfer-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-22T11:19:08.169+05:30  INFO 50010 --- [transfer-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-22T11:19:08.170+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Starting...
+2025-12-22T11:19:08.223+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-4 - Added connection org.postgresql.jdbc.PgConnection@11c79954
+2025-12-22T11:19:08.223+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Start completed.
+2025-12-22T11:19:08.232+05:30  WARN 50010 --- [transfer-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-22T11:19:08.356+05:30  INFO 50010 --- [transfer-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-22T11:19:08.357+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists accounts cascade
+2025-12-22T11:19:08.360+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-12-22T11:19:08.361+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "accounts" does not exist, skipping
+2025-12-22T11:19:08.361+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists transactions cascade
+2025-12-22T11:19:08.365+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-12-22T11:19:08.365+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "transactions" does not exist, skipping
+2025-12-22T11:19:08.366+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    create table accounts (
+        balance numeric(15,2) not null,
+        daily_limit numeric(15,2),
+        daily_used numeric(15,2),
+        monthly_limit numeric(15,2),
+        monthly_used numeric(15,2),
+        id bigserial not null,
+        phone varchar(255) not null,
+        status varchar(255) not null,
+        upi_id varchar(255) not null unique,
+        primary key (id)
+    )
+2025-12-22T11:19:08.390+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    create table transactions (
+        amount numeric(15,2) not null,
+        fee numeric(15,2),
+        total_debited numeric(15,2),
+        id bigserial not null,
+        timestamp timestamp(6) not null,
+        destination_upi varchar(255) not null,
+        remarks varchar(255),
+        source_upi varchar(255) not null,
+        status varchar(255) not null,
+        transaction_id varchar(255) not null unique,
+        primary key (id)
+    )
+2025-12-22T11:19:08.405+05:30  INFO 50010 --- [transfer-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-22T11:19:08.575+05:30  WARN 50010 --- [transfer-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-22T11:19:08.687+05:30  INFO 50010 --- [transfer-service] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:56003/transfer_test_db?loggerLevel=OFF'
+2025-12-22T11:19:08.717+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.contract.TransfersTest   : Started TransfersTest in 0.965 seconds (process running for 32.188)
+2025-12-22T11:19:08.724+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    select
+        t1_0.id,
+        t1_0.amount,
+        t1_0.destination_upi,
+        t1_0.fee,
+        t1_0.remarks,
+        t1_0.source_upi,
+        t1_0.status,
+        t1_0.timestamp,
+        t1_0.total_debited,
+        t1_0.transaction_id 
+    from
+        transactions t1_0
+2025-12-22T11:19:08.736+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.balance,
+        a1_0.daily_limit,
+        a1_0.daily_used,
+        a1_0.monthly_limit,
+        a1_0.monthly_used,
+        a1_0.phone,
+        a1_0.status,
+        a1_0.upi_id 
+    from
+        accounts a1_0
+2025-12-22T11:19:08.750+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accounts
+        (balance, daily_limit, daily_used, monthly_limit, monthly_used, phone, status, upi_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-22T11:19:08.760+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accounts
+        (balance, daily_limit, daily_used, monthly_limit, monthly_used, phone, status, upi_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-22T11:19:08.768+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accounts
+        (balance, daily_limit, daily_used, monthly_limit, monthly_used, phone, status, upi_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-22T11:19:08.778+05:30  INFO 50010 --- [transfer-service] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-12-22T11:19:08.778+05:30  INFO 50010 --- [transfer-service] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-12-22T11:19:08.779+05:30  INFO 50010 --- [transfer-service] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-12-22T11:19:08.797+05:30  WARN 50010 --- [transfer-service] [           main] c.n.t.exception.GlobalExceptionHandler   : Validation errors: 1
+]]></system-out>
+  </testcase>
+  <testcase name="validate_shouldReturnNotFoundForNonExistentAccount" classname="com.npci.transfer.contract.TransfersTest" time="0.97">
+    <system-out><![CDATA[2025-12-22T11:19:08.818+05:30  INFO 50010 --- [transfer-service] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-22T11:19:08.818+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists accounts cascade
+2025-12-22T11:19:08.830+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists transactions cascade
+2025-12-22T11:19:08.842+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown initiated...
+2025-12-22T11:19:08.843+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-4 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-12-22T11:19:08.891+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.contract.TransfersTest   : Starting TransfersTest using Java 17.0.8 with PID 50010 (started by nag in /Users/nag/telus-batch2/level-13-contract-testing)
+2025-12-22T11:19:08.891+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.contract.TransfersTest   : The following 1 profile is active: "test"
+2025-12-22T11:19:09.079+05:30  INFO 50010 --- [transfer-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-22T11:19:09.091+05:30  INFO 50010 --- [transfer-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 11 ms. Found 2 JPA repository interfaces.
+2025-12-22T11:19:09.186+05:30  INFO 50010 --- [transfer-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-22T11:19:09.189+05:30  INFO 50010 --- [transfer-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-22T11:19:09.194+05:30  INFO 50010 --- [transfer-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-22T11:19:09.195+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Starting...
+2025-12-22T11:19:09.247+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-5 - Added connection org.postgresql.jdbc.PgConnection@20c482f1
+2025-12-22T11:19:09.247+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Start completed.
+2025-12-22T11:19:09.255+05:30  WARN 50010 --- [transfer-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-22T11:19:09.358+05:30  INFO 50010 --- [transfer-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-22T11:19:09.358+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists accounts cascade
+2025-12-22T11:19:09.361+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-12-22T11:19:09.361+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "accounts" does not exist, skipping
+2025-12-22T11:19:09.362+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists transactions cascade
+2025-12-22T11:19:09.365+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-12-22T11:19:09.365+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "transactions" does not exist, skipping
+2025-12-22T11:19:09.366+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    create table accounts (
+        balance numeric(15,2) not null,
+        daily_limit numeric(15,2),
+        daily_used numeric(15,2),
+        monthly_limit numeric(15,2),
+        monthly_used numeric(15,2),
+        id bigserial not null,
+        phone varchar(255) not null,
+        status varchar(255) not null,
+        upi_id varchar(255) not null unique,
+        primary key (id)
+    )
+2025-12-22T11:19:09.385+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    create table transactions (
+        amount numeric(15,2) not null,
+        fee numeric(15,2),
+        total_debited numeric(15,2),
+        id bigserial not null,
+        timestamp timestamp(6) not null,
+        destination_upi varchar(255) not null,
+        remarks varchar(255),
+        source_upi varchar(255) not null,
+        status varchar(255) not null,
+        transaction_id varchar(255) not null unique,
+        primary key (id)
+    )
+2025-12-22T11:19:09.398+05:30  INFO 50010 --- [transfer-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-22T11:19:09.550+05:30  WARN 50010 --- [transfer-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-22T11:19:09.656+05:30  INFO 50010 --- [transfer-service] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:56003/transfer_test_db?loggerLevel=OFF'
+2025-12-22T11:19:09.683+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.contract.TransfersTest   : Started TransfersTest in 0.835 seconds (process running for 33.153)
+2025-12-22T11:19:09.690+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    select
+        t1_0.id,
+        t1_0.amount,
+        t1_0.destination_upi,
+        t1_0.fee,
+        t1_0.remarks,
+        t1_0.source_upi,
+        t1_0.status,
+        t1_0.timestamp,
+        t1_0.total_debited,
+        t1_0.transaction_id 
+    from
+        transactions t1_0
+2025-12-22T11:19:09.701+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.balance,
+        a1_0.daily_limit,
+        a1_0.daily_used,
+        a1_0.monthly_limit,
+        a1_0.monthly_used,
+        a1_0.phone,
+        a1_0.status,
+        a1_0.upi_id 
+    from
+        accounts a1_0
+2025-12-22T11:19:09.715+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accounts
+        (balance, daily_limit, daily_used, monthly_limit, monthly_used, phone, status, upi_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-22T11:19:09.726+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accounts
+        (balance, daily_limit, daily_used, monthly_limit, monthly_used, phone, status, upi_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-22T11:19:09.734+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accounts
+        (balance, daily_limit, daily_used, monthly_limit, monthly_used, phone, status, upi_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-22T11:19:09.742+05:30  INFO 50010 --- [transfer-service] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-12-22T11:19:09.743+05:30  INFO 50010 --- [transfer-service] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-12-22T11:19:09.744+05:30  INFO 50010 --- [transfer-service] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2025-12-22T11:19:09.757+05:30  INFO 50010 --- [transfer-service] [           main] c.n.t.controller.TransferController      : Received transfer request from nonexistent@fake to bob@paytm
+2025-12-22T11:19:09.760+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.balance,
+        a1_0.daily_limit,
+        a1_0.daily_used,
+        a1_0.monthly_limit,
+        a1_0.monthly_used,
+        a1_0.phone,
+        a1_0.status,
+        a1_0.upi_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.upi_id=?
+2025-12-22T11:19:09.772+05:30 ERROR 50010 --- [transfer-service] [           main] c.n.t.exception.GlobalExceptionHandler   : Account not found: Source account not found: nonexistent@fake
+]]></system-out>
+  </testcase>
+  <testcase name="validate_shouldSuccessfullyInitiateTransfer" classname="com.npci.transfer.contract.TransfersTest" time="1.053">
+    <system-out><![CDATA[2025-12-22T11:19:09.789+05:30  INFO 50010 --- [transfer-service] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-12-22T11:19:09.789+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists accounts cascade
+2025-12-22T11:19:09.801+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists transactions cascade
+2025-12-22T11:19:09.811+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown initiated...
+2025-12-22T11:19:09.812+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-5 - Shutdown completed.
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.0)
+
+2025-12-22T11:19:09.857+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.contract.TransfersTest   : Starting TransfersTest using Java 17.0.8 with PID 50010 (started by nag in /Users/nag/telus-batch2/level-13-contract-testing)
+2025-12-22T11:19:09.857+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.contract.TransfersTest   : The following 1 profile is active: "test"
+2025-12-22T11:19:10.035+05:30  INFO 50010 --- [transfer-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-12-22T11:19:10.048+05:30  INFO 50010 --- [transfer-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 12 ms. Found 2 JPA repository interfaces.
+2025-12-22T11:19:10.147+05:30  INFO 50010 --- [transfer-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-12-22T11:19:10.150+05:30  INFO 50010 --- [transfer-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-12-22T11:19:10.156+05:30  INFO 50010 --- [transfer-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-12-22T11:19:10.157+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Starting...
+2025-12-22T11:19:10.207+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-6 - Added connection org.postgresql.jdbc.PgConnection@10059d26
+2025-12-22T11:19:10.207+05:30  INFO 50010 --- [transfer-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-6 - Start completed.
+2025-12-22T11:19:10.217+05:30  WARN 50010 --- [transfer-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-12-22T11:19:10.321+05:30  INFO 50010 --- [transfer-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-12-22T11:19:10.321+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists accounts cascade
+2025-12-22T11:19:10.325+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-12-22T11:19:10.325+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "accounts" does not exist, skipping
+2025-12-22T11:19:10.325+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    drop table if exists transactions cascade
+2025-12-22T11:19:10.329+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2025-12-22T11:19:10.330+05:30  WARN 50010 --- [transfer-service] [           main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "transactions" does not exist, skipping
+2025-12-22T11:19:10.331+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    create table accounts (
+        balance numeric(15,2) not null,
+        daily_limit numeric(15,2),
+        daily_used numeric(15,2),
+        monthly_limit numeric(15,2),
+        monthly_used numeric(15,2),
+        id bigserial not null,
+        phone varchar(255) not null,
+        status varchar(255) not null,
+        upi_id varchar(255) not null unique,
+        primary key (id)
+    )
+2025-12-22T11:19:10.352+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    create table transactions (
+        amount numeric(15,2) not null,
+        fee numeric(15,2),
+        total_debited numeric(15,2),
+        id bigserial not null,
+        timestamp timestamp(6) not null,
+        destination_upi varchar(255) not null,
+        remarks varchar(255),
+        source_upi varchar(255) not null,
+        status varchar(255) not null,
+        transaction_id varchar(255) not null unique,
+        primary key (id)
+    )
+2025-12-22T11:19:10.370+05:30  INFO 50010 --- [transfer-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-12-22T11:19:10.528+05:30  WARN 50010 --- [transfer-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-12-22T11:19:10.649+05:30  INFO 50010 --- [transfer-service] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:postgresql://localhost:56003/transfer_test_db?loggerLevel=OFF'
+2025-12-22T11:19:10.683+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.contract.TransfersTest   : Started TransfersTest in 0.867 seconds (process running for 34.153)
+2025-12-22T11:19:10.690+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    select
+        t1_0.id,
+        t1_0.amount,
+        t1_0.destination_upi,
+        t1_0.fee,
+        t1_0.remarks,
+        t1_0.source_upi,
+        t1_0.status,
+        t1_0.timestamp,
+        t1_0.total_debited,
+        t1_0.transaction_id 
+    from
+        transactions t1_0
+2025-12-22T11:19:10.702+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.balance,
+        a1_0.daily_limit,
+        a1_0.daily_used,
+        a1_0.monthly_limit,
+        a1_0.monthly_used,
+        a1_0.phone,
+        a1_0.status,
+        a1_0.upi_id 
+    from
+        accounts a1_0
+2025-12-22T11:19:10.717+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accounts
+        (balance, daily_limit, daily_used, monthly_limit, monthly_used, phone, status, upi_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-22T11:19:10.727+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accounts
+        (balance, daily_limit, daily_used, monthly_limit, monthly_used, phone, status, upi_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-22T11:19:10.735+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        accounts
+        (balance, daily_limit, daily_used, monthly_limit, monthly_used, phone, status, upi_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-22T11:19:10.744+05:30  INFO 50010 --- [transfer-service] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2025-12-22T11:19:10.744+05:30  INFO 50010 --- [transfer-service] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2025-12-22T11:19:10.746+05:30  INFO 50010 --- [transfer-service] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2025-12-22T11:19:10.762+05:30  INFO 50010 --- [transfer-service] [           main] c.n.t.controller.TransferController      : Received transfer request from alice@okaxis to bob@paytm
+2025-12-22T11:19:10.767+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.balance,
+        a1_0.daily_limit,
+        a1_0.daily_used,
+        a1_0.monthly_limit,
+        a1_0.monthly_used,
+        a1_0.phone,
+        a1_0.status,
+        a1_0.upi_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.upi_id=?
+2025-12-22T11:19:10.779+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    select
+        a1_0.id,
+        a1_0.balance,
+        a1_0.daily_limit,
+        a1_0.daily_used,
+        a1_0.monthly_limit,
+        a1_0.monthly_used,
+        a1_0.phone,
+        a1_0.status,
+        a1_0.upi_id 
+    from
+        accounts a1_0 
+    where
+        a1_0.upi_id=?
+2025-12-22T11:19:10.784+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.service.TransferService  : Initiating transfer from alice@okaxis to bob@paytm for amount 500.00
+2025-12-22T11:19:10.791+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    insert 
+    into
+        transactions
+        (amount, destination_upi, fee, remarks, source_upi, status, timestamp, total_debited, transaction_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?)
+2025-12-22T11:19:10.800+05:30  INFO 50010 --- [transfer-service] [           main] c.npci.transfer.service.TransferService  : Transfer completed successfully. Transaction ID: TXN-20251222111910-7781
+2025-12-22T11:19:10.802+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    update
+        accounts 
+    set
+        balance=?,
+        daily_limit=?,
+        daily_used=?,
+        monthly_limit=?,
+        monthly_used=?,
+        phone=?,
+        status=?,
+        upi_id=? 
+    where
+        id=?
+2025-12-22T11:19:10.808+05:30 DEBUG 50010 --- [transfer-service] [           main] org.hibernate.SQL                        : 
+    update
+        accounts 
+    set
+        balance=?,
+        daily_limit=?,
+        daily_used=?,
+        monthly_limit=?,
+        monthly_used=?,
+        phone=?,
+        status=?,
+        upi_id=? 
+    where
+        id=?
+]]></system-out>
+  </testcase>
+</testsuite>

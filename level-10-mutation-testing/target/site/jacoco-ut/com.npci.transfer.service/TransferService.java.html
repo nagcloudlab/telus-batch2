@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>TransferService.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Transfer Service (Mutation Testing - PIT)</a> &gt; <a href="index.source.html" class="el_package">com.npci.transfer.service</a> &gt; <span class="el_source">TransferService.java</span></div><h1>TransferService.java</h1><pre class="source lang-java linenums">package com.npci.transfer.service;
+
+import com.npci.transfer.dto.TransferRequest;
+import com.npci.transfer.dto.TransferResponse;
+import com.npci.transfer.entity.Account;
+import com.npci.transfer.entity.Transaction;
+import com.npci.transfer.exception.AccountNotFoundException;
+import com.npci.transfer.exception.InsufficientBalanceException;
+import com.npci.transfer.exception.InvalidTransferException;
+import com.npci.transfer.exception.InvalidAmountException;
+import com.npci.transfer.repository.AccountRepository;
+import com.npci.transfer.repository.TransactionRepository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import java.math.BigDecimal;
+import java.security.SecureRandom;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
+/**
+ * Transfer Service - ALL SECURITY FIXES + TEST COMPATIBILITY
+ */
+@Service
+<span class="fc" id="L27">@RequiredArgsConstructor</span>
+<span class="fc" id="L28">@Slf4j</span>
+public class TransferService {
+    
+    private final AccountRepository accountRepository;
+    private final TransactionRepository transactionRepository;
+    private final FeeCalculator feeCalculator;
+    
+<span class="fc" id="L35">    private static final BigDecimal MIN_AMOUNT = new BigDecimal(&quot;1&quot;);</span>
+<span class="fc" id="L36">    private static final BigDecimal MAX_AMOUNT = new BigDecimal(&quot;100000&quot;);</span>
+    
+    // SECURITY FIX: SecureRandom for cryptographically strong randomness
+<span class="fc" id="L39">    private static final SecureRandom SECURE_RANDOM = new SecureRandom();</span>
+    
+    @Transactional
+    public TransferResponse initiateTransfer(TransferRequest request) {
+        // Validate amount
+<span class="fc" id="L44">        validateAmount(request.getAmount());</span>
+        
+        // Validate same account transfer (before DB lookup for efficiency)
+<span class="fc bfc" id="L47" title="All 2 branches covered.">        if (request.getSourceUPI().equals(request.getDestinationUPI())) {</span>
+<span class="fc" id="L48">            throw new InvalidTransferException(&quot;Cannot transfer to the same account&quot;);</span>
+        }
+        
+        // Find accounts
+<span class="fc" id="L52">        Account sourceAccount = findAccount(request.getSourceUPI(), &quot;Source&quot;);</span>
+<span class="fc" id="L53">        Account destinationAccount = findAccount(request.getDestinationUPI(), &quot;Destination&quot;);</span>
+        
+        // SECURITY FIX: Sanitized logging
+<span class="fc" id="L56">        log.info(&quot;Initiating transfer from {} to {} for amount {}&quot;,</span>
+<span class="fc" id="L57">            sanitizeForLog(request.getSourceUPI()),</span>
+<span class="fc" id="L58">            sanitizeForLog(request.getDestinationUPI()),</span>
+<span class="fc" id="L59">            request.getAmount());</span>
+        
+        // Calculate fee
+<span class="fc" id="L62">        BigDecimal fee = feeCalculator.calculateFee(request.getAmount());</span>
+<span class="fc" id="L63">        BigDecimal totalDebit = request.getAmount().add(fee);</span>
+        
+        // Validate sufficient balance (with detailed error message for tests)
+<span class="fc" id="L66">        validateSufficientBalance(sourceAccount, totalDebit);</span>
+        
+        // Perform transfer
+<span class="fc" id="L69">        sourceAccount.setBalance(sourceAccount.getBalance().subtract(totalDebit));</span>
+<span class="fc" id="L70">        destinationAccount.setBalance(destinationAccount.getBalance().add(request.getAmount()));</span>
+        
+        // Save updated accounts
+<span class="fc" id="L73">        accountRepository.save(sourceAccount);</span>
+<span class="fc" id="L74">        accountRepository.save(destinationAccount);</span>
+        
+        // Create transaction
+<span class="fc" id="L77">        Transaction transaction = new Transaction();</span>
+<span class="fc" id="L78">        transaction.setTransactionId(generateTransactionId());</span>
+<span class="fc" id="L79">        transaction.setSourceUPI(request.getSourceUPI());</span>
+<span class="fc" id="L80">        transaction.setDestinationUPI(request.getDestinationUPI());</span>
+<span class="fc" id="L81">        transaction.setAmount(request.getAmount());</span>
+<span class="fc" id="L82">        transaction.setFee(fee);</span>
+<span class="fc" id="L83">        transaction.setTotalDebited(totalDebit);</span>
+<span class="fc" id="L84">        transaction.setStatus(&quot;SUCCESS&quot;);</span>
+<span class="fc" id="L85">        transaction.setRemarks(request.getRemarks());</span>
+<span class="fc" id="L86">        transaction.setTimestamp(LocalDateTime.now());</span>
+        
+<span class="fc" id="L88">        Transaction savedTransaction = transactionRepository.save(transaction);</span>
+        
+        // SECURITY FIX: Sanitized logging
+<span class="fc" id="L91">        log.info(&quot;Transfer completed successfully. Transaction ID: {}&quot;,</span>
+<span class="fc" id="L92">            sanitizeForLog(savedTransaction.getTransactionId()));</span>
+        
+<span class="fc" id="L94">        return TransferResponse.builder()</span>
+<span class="fc" id="L95">                .transactionId(savedTransaction.getTransactionId())</span>
+<span class="fc" id="L96">                .status(savedTransaction.getStatus())</span>
+<span class="fc" id="L97">                .sourceUPI(savedTransaction.getSourceUPI())</span>
+<span class="fc" id="L98">                .destinationUPI(savedTransaction.getDestinationUPI())</span>
+<span class="fc" id="L99">                .amount(savedTransaction.getAmount())</span>
+<span class="fc" id="L100">                .fee(savedTransaction.getFee())</span>
+<span class="fc" id="L101">                .totalDebited(savedTransaction.getTotalDebited())</span>
+<span class="fc" id="L102">                .timestamp(savedTransaction.getTimestamp())</span>
+<span class="fc" id="L103">                .remarks(savedTransaction.getRemarks())</span>
+<span class="fc" id="L104">                .build();</span>
+    }
+    
+    public BigDecimal checkBalance(String upiId) {
+<span class="nc" id="L108">        Account account = findAccount(upiId, &quot;Account&quot;);</span>
+<span class="nc" id="L109">        return account.getBalance();</span>
+    }
+    
+    public Transaction getTransactionStatus(String transactionId) {
+<span class="nc" id="L113">        return transactionRepository.findByTransactionId(transactionId)</span>
+<span class="nc" id="L114">                .orElseThrow(() -&gt; new InvalidTransferException(</span>
+                        &quot;Transaction not found: &quot; + transactionId));
+    }
+    
+    /**
+     * Find account with specific error message for source/destination
+     */
+    private Account findAccount(String upiId, String accountType) {
+<span class="fc" id="L122">        return accountRepository.findByUpiId(upiId)</span>
+<span class="fc" id="L123">                .orElseThrow(() -&gt; new AccountNotFoundException(</span>
+                        accountType + &quot; account not found: &quot; + upiId));
+    }
+    
+    private void validateAmount(BigDecimal amount) {
+<span class="pc bpc" id="L128" title="1 of 2 branches missed.">        if (amount == null) {</span>
+<span class="nc" id="L129">            throw new InvalidAmountException(&quot;Amount cannot be null&quot;);</span>
+        }
+<span class="fc bfc" id="L131" title="All 2 branches covered.">        if (amount.compareTo(MIN_AMOUNT) &lt; 0) {</span>
+<span class="fc" id="L132">            throw new InvalidAmountException(</span>
+                    &quot;Minimum transfer amount is ₹&quot; + MIN_AMOUNT);
+        }
+<span class="fc bfc" id="L135" title="All 2 branches covered.">        if (amount.compareTo(MAX_AMOUNT) &gt; 0) {</span>
+<span class="fc" id="L136">            throw new InvalidAmountException(</span>
+                    &quot;Maximum per-transaction limit is ₹&quot; + MAX_AMOUNT);
+        }
+        
+<span class="pc bpc" id="L140" title="1 of 2 branches missed.">        if (amount.scale() &gt; 2) {</span>
+<span class="nc" id="L141">            throw new InvalidAmountException(</span>
+                    &quot;Amount cannot have more than 2 decimal places&quot;);
+        }
+<span class="fc" id="L144">    }</span>
+    
+    /**
+     * FIXED: Added detailed error message for tests
+     */
+    private void validateSufficientBalance(Account account, BigDecimal requiredAmount) {
+<span class="fc bfc" id="L150" title="All 2 branches covered.">        if (account.getBalance().compareTo(requiredAmount) &lt; 0) {</span>
+<span class="fc" id="L151">            throw new InsufficientBalanceException(</span>
+<span class="fc" id="L152">                String.format(&quot;Insufficient balance. Available: ₹%s, Required: ₹%s&quot;,</span>
+<span class="fc" id="L153">                    account.getBalance(), requiredAmount));</span>
+        }
+<span class="fc" id="L155">    }</span>
+    
+    /**
+     * SECURITY FIX: SecureRandom + correct format for tests
+     */
+    private String generateTransactionId() {
+<span class="fc" id="L161">        String timestamp = LocalDateTime.now()</span>
+<span class="fc" id="L162">                .format(DateTimeFormatter.ofPattern(&quot;yyyyMMddHHmmss&quot;));</span>
+<span class="fc" id="L163">        int randomSuffix = SECURE_RANDOM.nextInt(10000);</span>
+<span class="fc" id="L164">        return String.format(&quot;TXN-%s-%04d&quot;, timestamp, randomSuffix);</span>
+    }
+    
+    /**
+     * SECURITY FIX: Prevent CRLF injection
+     */
+    private String sanitizeForLog(String input) {
+<span class="pc bpc" id="L171" title="1 of 2 branches missed.">        if (input == null) {</span>
+<span class="nc" id="L172">            return null;</span>
+        }
+<span class="fc" id="L174">        return input.replace('\n', '_')</span>
+<span class="fc" id="L175">                    .replace('\r', '_')</span>
+<span class="fc" id="L176">                    .replace('\t', '_');</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

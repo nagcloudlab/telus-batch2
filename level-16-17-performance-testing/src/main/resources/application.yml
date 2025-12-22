@@ -1,0 +1,37 @@
+spring:
+  application:
+    name: transfer-service-performance
+  
+  datasource:
+    url: jdbc:postgresql://localhost:5432/transfer_db
+    username: postgres
+    password: postgres
+    
+    hikari:
+      pool-name: TransferServicePool
+      maximum-pool-size: 20
+      minimum-idle: 5
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      leak-detection-threshold: 60000
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,prometheus
+  metrics:
+    distribution:
+      percentiles-histogram:
+        http.server.requests: true
+      percentiles:
+        http.server.requests: 0.5, 0.95, 0.99
+
+server:
+  port: 8080

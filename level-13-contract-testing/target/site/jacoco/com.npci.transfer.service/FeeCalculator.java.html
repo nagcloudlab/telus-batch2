@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FeeCalculator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Transfer Service (Testcontainers)</a> &gt; <a href="index.source.html" class="el_package">com.npci.transfer.service</a> &gt; <span class="el_source">FeeCalculator.java</span></div><h1>FeeCalculator.java</h1><pre class="source lang-java linenums">package com.npci.transfer.service;
+
+import org.springframework.stereotype.Component;
+
+import java.math.BigDecimal;
+
+/**
+ * Fee Calculator - Calculates transaction fees
+ * 
+ * Follows Open/Closed Principle (O in SOLID)
+ * - Open for extension (can add new strategies)
+ * - Closed for modification (existing logic unchanged)
+ * 
+ * Currently uses simple fee strategy:
+ * - Amount &gt; ₹1,000: ₹5 fee
+ * - Amount ≤ ₹1,000: No fee
+ * 
+ * Future: Can be extended with Strategy pattern for:
+ * - Premium accounts (no fee)
+ * - Weekend transfers (higher fee)
+ * - International transfers (different fee)
+ */
+@Component
+<span class="fc" id="L24">public class FeeCalculator {</span>
+    
+<span class="fc" id="L26">    private static final BigDecimal FEE_THRESHOLD = new BigDecimal(&quot;1000&quot;);</span>
+<span class="fc" id="L27">    private static final BigDecimal TRANSACTION_FEE = new BigDecimal(&quot;5.00&quot;);</span>
+    
+    /**
+     * Calculates fee for a transfer.
+     * 
+     * @param amount Transfer amount
+     * @return Fee to be charged
+     */
+    public BigDecimal calculateFee(BigDecimal amount) {
+<span class="fc bfc" id="L36" title="All 2 branches covered.">        if (amount == null) {</span>
+<span class="fc" id="L37">            return BigDecimal.ZERO;</span>
+        }
+        
+<span class="fc bfc" id="L40" title="All 2 branches covered.">        return amount.compareTo(FEE_THRESHOLD) &gt; 0 </span>
+<span class="fc" id="L41">            ? TRANSACTION_FEE </span>
+<span class="fc" id="L42">            : BigDecimal.ZERO;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

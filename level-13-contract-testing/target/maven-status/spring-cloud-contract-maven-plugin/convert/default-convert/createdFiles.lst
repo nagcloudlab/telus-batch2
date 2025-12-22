@@ -1,0 +1,10 @@
+META-INF/com.npci/transfer-service-contract/7.0.0/mappings/transfers/shouldReturnBadRequestForInsufficientBalance.json
+META-INF/com.npci/transfer-service-contract/7.0.0/contracts/transfers/shouldReturnBadRequestForInsufficientBalance.groovy
+META-INF/com.npci/transfer-service-contract/7.0.0/contracts/transfers/shouldReturnNotFoundForNonExistentAccount.groovy
+META-INF/com.npci/transfer-service-contract/7.0.0/mappings/transfers/shouldSuccessfullyInitiateTransfer.json
+META-INF/com.npci/transfer-service-contract/7.0.0/contracts/transfers/shouldSuccessfullyInitiateTransfer.groovy
+META-INF/com.npci/transfer-service-contract/7.0.0/mappings/transfers/shouldReturnBadRequestForMissingFields.json
+META-INF/com.npci/transfer-service-contract/7.0.0/contracts/transfers/shouldReturnBadRequestForMissingFields.groovy
+META-INF/com.npci/transfer-service-contract/7.0.0/mappings/transfers/shouldReturnNotFoundForNonExistentAccount.json
+META-INF/com.npci/transfer-service-contract/7.0.0/mappings/transfers/shouldReturnBadRequestForNegativeAmount.json
+META-INF/com.npci/transfer-service-contract/7.0.0/contracts/transfers/shouldReturnBadRequestForNegativeAmount.groovy

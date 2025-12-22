@@ -8,8 +8,8 @@
         <option value="$PROJECT_DIR$/api-tests/pom.xml" />
         <option value="$PROJECT_DIR$/perf-tests/pom.xml" />
         <option value="$PROJECT_DIR$/transfer-service/pom.xml" />
-        <option value="$PROJECT_DIR$/level-09-security-sast/pom.xml" />
         <option value="$PROJECT_DIR$/level-09/pom.xml" />
+        <option value="$PROJECT_DIR$/level-11-testcontainers/pom.xml" />
       </list>
     </option>
   </component>

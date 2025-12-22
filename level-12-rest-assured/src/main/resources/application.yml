@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: transfer-service
+
+  # H2 for quick local development
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.H2Dialect
+
+logging:
+  level:
+    com.npci.transfer: INFO
+    org.hibernate.SQL: DEBUG
+
+server:
+  port: 8080

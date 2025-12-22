@@ -1,0 +1,2 @@
+        <!-- Spring Cloud Contract -->
+        <spring-cloud-contract.version>4.1.0</spring-cloud-contract.version>

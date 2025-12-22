@@ -1,0 +1,19 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Transfer Service (Mutation Testing - PIT),com.npci.transfer.dto,TransferResponse.TransferResponseBuilder,20,70,0,0,0,1,1,11,1,11
+Transfer Service (Mutation Testing - PIT),com.npci.transfer.dto,TransferResponse,368,61,78,0,2,11,53,11,14,11
+Transfer Service (Mutation Testing - PIT),com.npci.transfer.dto,TransferRequest,164,46,38,0,0,7,23,10,4,10
+Transfer Service (Mutation Testing - PIT),com.npci.transfer.repository,JpaAccountRepository,7,50,1,5,1,13,1,6,0,4
+Transfer Service (Mutation Testing - PIT),com.npci.transfer.repository,JpaTransactionRepository,39,0,4,0,10,0,5,0,3,0
+Transfer Service (Mutation Testing - PIT),com.npci.transfer,TransferServiceApplication,5,3,0,0,2,1,1,1,1,1
+Transfer Service (Mutation Testing - PIT),com.npci.transfer.entity,Account,359,66,78,0,1,11,44,19,5,19
+Transfer Service (Mutation Testing - PIT),com.npci.transfer.entity,Transaction,402,66,86,0,2,11,50,19,7,19
+Transfer Service (Mutation Testing - PIT),com.npci.transfer.controller,TransferController,2,52,1,1,1,13,1,5,0,5
+Transfer Service (Mutation Testing - PIT),com.npci.transfer.exception,InvalidAmountException,0,4,0,0,0,2,0,1,0,1
+Transfer Service (Mutation Testing - PIT),com.npci.transfer.exception,InvalidTransferException,0,4,0,0,0,2,0,1,0,1
+Transfer Service (Mutation Testing - PIT),com.npci.transfer.exception,ErrorResponse,210,52,42,4,6,17,31,9,10,7
+Transfer Service (Mutation Testing - PIT),com.npci.transfer.exception,InsufficientBalanceException,0,4,0,0,0,2,0,1,0,1
+Transfer Service (Mutation Testing - PIT),com.npci.transfer.exception,GlobalExceptionHandler,28,192,2,2,9,61,3,10,1,10
+Transfer Service (Mutation Testing - PIT),com.npci.transfer.exception,AccountNotFoundException,0,4,0,0,0,2,0,1,0,1
+Transfer Service (Mutation Testing - PIT),com.npci.transfer.exception,ErrorResponse.ErrorResponseBuilder,12,42,0,0,0,1,1,7,1,7
+Transfer Service (Mutation Testing - PIT),com.npci.transfer.service,TransferService,35,300,3,11,7,67,6,13,3,9
+Transfer Service (Mutation Testing - PIT),com.npci.transfer.service,FeeCalculator,0,26,0,4,0,8,0,5,0,3

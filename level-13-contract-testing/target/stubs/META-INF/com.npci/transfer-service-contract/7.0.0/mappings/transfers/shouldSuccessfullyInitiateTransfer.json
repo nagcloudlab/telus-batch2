@@ -1,0 +1,30 @@
+{
+  "id" : "78e76603-97cd-4c3b-a727-44c2aa55aaf5",
+  "request" : {
+    "url" : "/v1/transfers",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['sourceUPI'] == 'alice@okaxis')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['destinationUPI'] == 'bob@paytm')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['amount'] == 500.00)]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['remarks'] == 'Payment for services')]"
+    } ]
+  },
+  "response" : {
+    "status" : 200,
+    "body" : "{\"transactionId\":\"PIECNMGFOEUBWUCAIUWX\",\"sourceUPI\":\"alice@okaxis\",\"destinationUPI\":\"bob@paytm\",\"amount\":500.00,\"fee\":-669672446,\"totalDebited\":-872317119,\"status\":\"SUCCESS\",\"timestamp\":\"YNIZSDVSJKQIBVLQLXVF\"}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template", "spring-cloud-contract" ]
+  },
+  "uuid" : "78e76603-97cd-4c3b-a727-44c2aa55aaf5"
+}

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Transaction.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Transfer Service (Mutation Testing - PIT)</a> &gt; <a href="index.source.html" class="el_package">com.npci.transfer.entity</a> &gt; <span class="el_source">Transaction.java</span></div><h1>Transaction.java</h1><pre class="source lang-java linenums">package com.npci.transfer.entity;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
+/**
+ * Transaction Entity
+ */
+@Entity
+@Table(name = &quot;transactions&quot;)
+<span class="pc bnc" id="L16" title="All 86 branches missed.">@Data</span>
+<span class="fc" id="L17">@NoArgsConstructor</span>
+<span class="nc" id="L18">@AllArgsConstructor</span>
+public class Transaction {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+<span class="nc" id="L23">    private Long id;</span>
+    
+    @Column(name = &quot;transaction_id&quot;, unique = true, nullable = false)
+<span class="fc" id="L26">    private String transactionId;</span>
+    
+    @Column(name = &quot;source_upi&quot;, nullable = false)
+<span class="fc" id="L29">    private String sourceUPI;</span>
+    
+    @Column(name = &quot;destination_upi&quot;, nullable = false)
+<span class="fc" id="L32">    private String destinationUPI;</span>
+    
+    @Column(nullable = false, precision = 15, scale = 2)
+<span class="fc" id="L35">    private BigDecimal amount;</span>
+    
+    @Column(precision = 15, scale = 2)
+<span class="fc" id="L38">    private BigDecimal fee;</span>
+    
+    @Column(name = &quot;total_debited&quot;, precision = 15, scale = 2)
+<span class="fc" id="L41">    private BigDecimal totalDebited;</span>
+    
+    @Column(nullable = false)
+<span class="fc" id="L44">    private String status;</span>
+    
+    @Column
+<span class="fc" id="L47">    private String remarks;</span>
+    
+    @Column(nullable = false)
+<span class="fc" id="L50">    private LocalDateTime timestamp;</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

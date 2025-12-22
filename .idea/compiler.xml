@@ -7,7 +7,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="transfer-service-performance" />
         <module name="transfer-service-tested" />
+        <module name="transfer-service-rest-assured" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -16,7 +18,9 @@
       <module name="transfer-service" target="17" />
       <module name="transfer-service (1)" target="17" />
       <module name="transfer-service (1) (com.demo)" target="17" />
+      <module name="transfer-service-mutation" target="17" />
       <module name="transfer-service-refactored" target="17" />
+      <module name="transfer-service-testcontainers" target="17" />
       <module name="transfer-service-tested (1)" target="17" />
       <module name="transfer-service-tested-security" target="17" />
       <module name="transfer-service-tested-with-sonarqube" target="17" />
@@ -27,7 +31,11 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="transfer-service" options="-parameters" />
       <module name="transfer-service (1) (com.demo)" options="-parameters" />
+      <module name="transfer-service-mutation" options="-parameters" />
+      <module name="transfer-service-performance" options="-parameters" />
       <module name="transfer-service-refactored" options="-parameters" />
+      <module name="transfer-service-rest-assured" options="-parameters" />
+      <module name="transfer-service-testcontainers" options="-parameters" />
       <module name="transfer-service-tested" options="-parameters" />
       <module name="transfer-service-tested (1)" options="-parameters" />
       <module name="transfer-service-tested-security" options="-parameters" />

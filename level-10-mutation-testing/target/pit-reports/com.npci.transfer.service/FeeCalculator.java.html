@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+</head>
+<body>
+
+
+<h1>FeeCalculator.java</h1>
+
+<table class="src">
+
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_1'/>
+1
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_1'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>package com.npci.transfer.service;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_2'/>
+2
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_2'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_3'/>
+3
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_3'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import org.springframework.stereotype.Component;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_4'/>
+4
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_4'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_5'/>
+5
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_5'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>import java.math.BigDecimal;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_6'/>
+6
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_6'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''></span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_7'/>
+7
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_7'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>/**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_8'/>
+8
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_8'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Fee Calculator - Calculates transaction fees</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_9'/>
+9
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_9'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_10'/>
+10
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_10'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Follows Open/Closed Principle (O in SOLID)</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_11'/>
+11
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_11'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * - Open for extension (can add new strategies)</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_12'/>
+12
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_12'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * - Closed for modification (existing logic unchanged)</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_13'/>
+13
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_13'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_14'/>
+14
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_14'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Currently uses simple fee strategy:</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_15'/>
+15
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_15'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * - Amount &#62; &#8377;1,000: &#8377;5 fee</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_16'/>
+16
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_16'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * - Amount &#8804; &#8377;1,000: No fee</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_17'/>
+17
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_17'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_18'/>
+18
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_18'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * Future: Can be extended with Strategy pattern for:</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_19'/>
+19
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_19'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * - Premium accounts (no fee)</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_20'/>
+20
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_20'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * - Weekend transfers (higher fee)</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_21'/>
+21
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_21'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> * - International transfers (different fee)</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_22'/>
+22
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_22'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''> */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_23'/>
+23
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_23'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>@Component</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_24'/>
+24
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_24'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>public class FeeCalculator {</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_25'/>
+25
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_25'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_26'/>
+26
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_26'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private static final BigDecimal FEE_THRESHOLD = new BigDecimal(&#34;1000&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_27'/>
+27
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_27'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>    private static final BigDecimal TRANSACTION_FEE = new BigDecimal(&#34;5.00&#34;);</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_28'/>
+28
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_28'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_29'/>
+29
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_29'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    /**</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_30'/>
+30
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_30'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * Calculates fee for a transfer.</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_31'/>
+31
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_31'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * </span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_32'/>
+32
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_32'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @param amount Transfer amount</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_33'/>
+33
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_33'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     * @return Fee to be charged</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_34'/>
+34
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_34'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>     */</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_35'/>
+35
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_35'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    public BigDecimal calculateFee(BigDecimal amount) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_36'/>
+36
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_36'>1</a>
+<span>
+1. calculateFee : removed conditional - replaced equality check with false &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        if (amount == null) {</span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_37'/>
+37
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_37'>1</a>
+<span>
+1. calculateFee : replaced return value with null for com/npci/transfer/service/FeeCalculator::calculateFee &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>            return BigDecimal.ZERO;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_38'/>
+38
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_38'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_39'/>
+39
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_39'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>        </span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_40'/>
+40
+</td>
+<td class='killed'>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_40'>3</a>
+<span>
+1. calculateFee : changed conditional boundary &rarr; KILLED<br/>
+2. calculateFee : removed conditional - replaced comparison check with false &rarr; KILLED<br/>
+3. calculateFee : replaced return value with null for com/npci/transfer/service/FeeCalculator::calculateFee &rarr; KILLED<br/>
+
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class='killed'>        return amount.compareTo(FEE_THRESHOLD) &#62; 0 </span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_41'/>
+41
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_41'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            ? TRANSACTION_FEE </span></pre></td></tr>
+
+
+<tr>
+<td class='covered'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_42'/>
+42
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_42'></a>
+<span>
+</span>
+</span>
+</td>
+<td class='covered'><pre><span  class=''>            : BigDecimal.ZERO;</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_43'/>
+43
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_43'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>    }</span></pre></td></tr>
+
+
+<tr>
+<td class='na'>
+<a name='org.pitest.mutationtest.report.html.SourceFile@63062eea_44'/>
+44
+</td>
+<td class=''>
+<span class='pop'>
+<a href='#grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_44'></a>
+<span>
+</span>
+</span>
+</td>
+<td class=''><pre><span  class=''>}</span></pre></td></tr>
+
+
+
+<tr><td></td><td></td><td><h2>Mutations</h2></td></tr>
+
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63062eea_36'>36</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_36'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateFee<br/><b>Killed by : </b>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[method:shouldHandleNullAmount()]</span></span> removed conditional - replaced equality check with false &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63062eea_37'>37</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_37'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateFee<br/><b>Killed by : </b>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[method:shouldHandleNullAmount()]</span></span> replaced return value with null for com/npci/transfer/service/FeeCalculator::calculateFee &rarr; KILLED</p> 
+</td>
+</tr>
+<tr>
+<td><a href='#org.pitest.mutationtest.report.html.SourceFile@63062eea_40'>40</a></td> 
+<td></td>
+<td>
+
+<a name='grouporg.pitest.mutationtest.report.html.SourceFile@63062eea_40'/> 
+
+<p class='KILLED'><span class='pop'>1.<span><b>1</b><br/><b>Location : </b>calculateFee<br/><b>Killed by : </b>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCalculateFeeCorrectly(java.lang.String, java.lang.String)]/[test-template-invocation:#7]</span></span> changed conditional boundary &rarr; KILLED</p> <p class='KILLED'><span class='pop'>2.<span><b>2</b><br/><b>Location : </b>calculateFee<br/><b>Killed by : </b>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[method:shouldReturn5Fee_ForAmountsOverThreshold()]</span></span> removed conditional - replaced comparison check with false &rarr; KILLED</p> <p class='KILLED'><span class='pop'>3.<span><b>3</b><br/><b>Location : </b>calculateFee<br/><b>Killed by : </b>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[method:shouldReturn5Fee_ForAmountsOverThreshold()]</span></span> replaced return value with null for com/npci/transfer/service/FeeCalculator::calculateFee &rarr; KILLED</p> 
+</td>
+</tr>
+
+</table>
+
+
+<h2>Active mutators</h2>
+<ul>
+<li class='mutator'>CONDITIONALS_BOUNDARY</li>
+<li class='mutator'>EMPTY_RETURNS</li>
+<li class='mutator'>FALSE_RETURNS</li>
+<li class='mutator'>INCREMENTS</li>
+<li class='mutator'>INVERT_NEGS</li>
+<li class='mutator'>MATH</li>
+<li class='mutator'>NULL_RETURNS</li>
+<li class='mutator'>PRIMITIVE_RETURNS</li>
+<li class='mutator'>REMOVE_CONDITIONALS_EQUAL_ELSE</li>
+<li class='mutator'>REMOVE_CONDITIONALS_ORDER_ELSE</li>
+<li class='mutator'>TRUE_RETURNS</li>
+<li class='mutator'>VOID_METHOD_CALLS</li>
+
+</ul>
+
+<h2>Tests examined</h2>
+<ul>
+<li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[method:shouldReturn5Fee_ForAmountsOverThreshold()] (0 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCalculateFeeCorrectly(java.lang.String, java.lang.String)]/[test-template-invocation:#12] (0 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCalculateFeeCorrectly(java.lang.String, java.lang.String)]/[test-template-invocation:#7] (0 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[method:shouldReturnZeroFee_ForMinimumAmount()] (0 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[method:shouldChargeFee_JustAboveThreshold()] (0 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldNotChargeFee_ForAmountsBelowOrEqualToThreshold(java.lang.String)]/[test-template-invocation:#4] (0 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldNotChargeFee_ForAmountsBelowOrEqualToThreshold(java.lang.String)]/[test-template-invocation:#5] (0 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[method:shouldNotChargeFee_JustBelowThreshold()] (0 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[method:shouldHandleAmountsWithDecimals()] (0 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCalculateFeeCorrectly(java.lang.String, java.lang.String)]/[test-template-invocation:#13] (1 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[method:shouldReturnZeroFee_ForAmountsUpToThreshold()] (1 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCalculateFeeCorrectly(java.lang.String, java.lang.String)]/[test-template-invocation:#11] (1 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCalculateFeeCorrectly(java.lang.String, java.lang.String)]/[test-template-invocation:#10] (1 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCharge5Fee_ForAmountsAboveThreshold(java.lang.String)]/[test-template-invocation:#2] (1 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCharge5Fee_ForAmountsAboveThreshold(java.lang.String)]/[test-template-invocation:#3] (1 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCalculateFeeCorrectly(java.lang.String, java.lang.String)]/[test-template-invocation:#4] (1 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[method:shouldNotChargeFee_AtExactThreshold()] (1 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCalculateFeeCorrectly(java.lang.String, java.lang.String)]/[test-template-invocation:#6] (1 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldNotChargeFee_ForAmountsBelowOrEqualToThreshold(java.lang.String)]/[test-template-invocation:#1] (1 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCalculateFeeCorrectly(java.lang.String, java.lang.String)]/[test-template-invocation:#3] (1 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCalculateFeeCorrectly(java.lang.String, java.lang.String)]/[test-template-invocation:#9] (1 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldNotChargeFee_ForAmountsBelowOrEqualToThreshold(java.lang.String)]/[test-template-invocation:#2] (1 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCalculateFeeCorrectly(java.lang.String, java.lang.String)]/[test-template-invocation:#8] (1 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[method:shouldReturn5Fee_ForMaximumAmount()] (1 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCharge5Fee_ForAmountsAboveThreshold(java.lang.String)]/[test-template-invocation:#5] (1 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[method:shouldBeStateless()] (0 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[method:shouldReturnSameFee_ForSameAmount()] (0 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCalculateFeeCorrectly(java.lang.String, java.lang.String)]/[test-template-invocation:#5] (2 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCalculateFeeCorrectly(java.lang.String, java.lang.String)]/[test-template-invocation:#1] (2 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCalculateFeeCorrectly(java.lang.String, java.lang.String)]/[test-template-invocation:#2] (2 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldNotChargeFee_ForAmountsBelowOrEqualToThreshold(java.lang.String)]/[test-template-invocation:#3] (3 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCharge5Fee_ForAmountsAboveThreshold(java.lang.String)]/[test-template-invocation:#4] (3 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[method:shouldReturnFeeWithCorrectPrecision()] (4 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[test-template:shouldCharge5Fee_ForAmountsAboveThreshold(java.lang.String)]/[test-template-invocation:#1] (21 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[method:shouldCalculateFeeQuickly()] (71 ms)</li><li>com.npci.transfer.service.FeeCalculatorTest.[engine:junit-jupiter]/[class:com.npci.transfer.service.FeeCalculatorTest]/[method:shouldHandleNullAmount()] (0 ms)</li>
+</ul>
+
+<br/>
+
+Report generated by <a href='https://pitest.org'>PIT</a> 1.15.3
+
+</body>
+</html>

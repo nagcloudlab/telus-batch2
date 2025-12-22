@@ -1,0 +1,19 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Transfer Service (Testcontainers),com.npci.transfer.dto,TransferResponse.TransferResponseBuilder,20,70,0,0,0,1,1,11,1,11
+Transfer Service (Testcontainers),com.npci.transfer.dto,TransferRequest.TransferRequestBuilder,10,35,0,0,0,1,1,6,1,6
+Transfer Service (Testcontainers),com.npci.transfer.dto,TransferResponse,368,66,78,0,2,12,53,12,14,12
+Transfer Service (Testcontainers),com.npci.transfer.dto,TransferRequest,164,50,38,0,0,8,23,11,4,11
+Transfer Service (Testcontainers),com.npci.transfer,TransferServiceApplication,5,3,0,0,2,1,1,1,1,1
+Transfer Service (Testcontainers),com.npci.transfer.entity,Account.AccountBuilder,25,65,0,0,0,1,2,10,2,10
+Transfer Service (Testcontainers),com.npci.transfer.entity,Account,329,100,78,0,0,13,43,21,4,21
+Transfer Service (Testcontainers),com.npci.transfer.entity,Transaction,402,66,86,0,2,11,50,19,7,19
+Transfer Service (Testcontainers),com.npci.transfer.controller,TransferController,2,52,1,1,1,13,1,5,0,5
+Transfer Service (Testcontainers),com.npci.transfer.exception,InvalidAmountException,0,4,0,0,0,2,0,1,0,1
+Transfer Service (Testcontainers),com.npci.transfer.exception,InvalidTransferException,0,4,0,0,0,2,0,1,0,1
+Transfer Service (Testcontainers),com.npci.transfer.exception,ErrorResponse,237,43,48,0,1,7,34,8,10,8
+Transfer Service (Testcontainers),com.npci.transfer.exception,InsufficientBalanceException,0,4,0,0,0,2,0,1,0,1
+Transfer Service (Testcontainers),com.npci.transfer.exception,GlobalExceptionHandler,28,204,2,2,9,65,3,10,1,10
+Transfer Service (Testcontainers),com.npci.transfer.exception,AccountNotFoundException,0,4,0,0,0,2,0,1,0,1
+Transfer Service (Testcontainers),com.npci.transfer.exception,ErrorResponse.ErrorResponseBuilder,14,49,0,0,0,1,1,8,1,8
+Transfer Service (Testcontainers),com.npci.transfer.service,TransferService,35,301,3,11,7,67,6,13,3,9
+Transfer Service (Testcontainers),com.npci.transfer.service,FeeCalculator,0,26,0,4,0,8,0,5,0,3

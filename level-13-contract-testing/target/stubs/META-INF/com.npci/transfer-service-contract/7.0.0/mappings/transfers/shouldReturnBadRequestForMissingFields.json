@@ -1,0 +1,26 @@
+{
+  "id" : "0c3a5282-c1c8-4f53-ada1-e7aabce6e75d",
+  "request" : {
+    "url" : "/v1/transfers",
+    "method" : "POST",
+    "headers" : {
+      "Content-Type" : {
+        "matches" : "application/json.*"
+      }
+    },
+    "bodyPatterns" : [ {
+      "matchesJsonPath" : "$[?(@.['sourceUPI'] == 'alice@okaxis')]"
+    }, {
+      "matchesJsonPath" : "$[?(@.['amount'] == 100.00)]"
+    } ]
+  },
+  "response" : {
+    "status" : 400,
+    "body" : "{\"timestamp\":\"IQIJVAAVADDDEUNNZZKS\",\"status\":400,\"error\":\"DDUXEAJDYXZLUBTAIGRX\",\"message\":\"HIFTBSHDBLXEPCNSPKTU\",\"errors\":\"DHDKPGTJKNGRAMQMRSCK\"}",
+    "headers" : {
+      "Content-Type" : "application/json"
+    },
+    "transformers" : [ "response-template", "spring-cloud-contract" ]
+  },
+  "uuid" : "0c3a5282-c1c8-4f53-ada1-e7aabce6e75d"
+}
